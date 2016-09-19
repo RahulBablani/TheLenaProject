@@ -8,26 +8,29 @@ Team1
 
 **Team members:** 
   * Nezar Dimitri ~ dimitn
-  * Rahul Bablani ~ *fill in*
-  * Abeed Alibhai ~ *fill in*
+  * Rahul Bablani ~ bablanr
+  * Abeed Alibhai ~ 
 
 **Orignal Project Name:** 
 Marvin Image Processing Framework
 
 **Software purpose:** 
-*fill in*
+Marvin is an image processing framework that provides features for image and video frame manipulation, multithreading image processing, image filtering and analysis, unit testing, performance analysis and addition of new features via plug-in.
 
 **Software scope:** 
-*fill in*
+We will be recreating 3 certain parts of the framework:
+Gray – Turns processed image into a gray-scaled photo
+EdgeDetector – Detects all edge points within a photo
+Invert – Locates and inverts colour within the photo
 
 **URL for original project:** 
 https://sourceforge.net/projects/marvinproject/?source=typ_redirect
 
 **Any specialized hardware requirements?** 
-*fill in*
+None, a standard computer will be able to run the image processing framework
 
 **Any software license required that McMaster does not own?** 
-*fill in*
+No license is required
 
 **Programming language:** 
 Java
@@ -39,16 +42,16 @@ Yes
 Yes
 
 **Number of lines of code in original:** 
-*fill in*
+96
 
 **License:** 
-*fill in*
+GNU Library or Lesser General Public Licensce version 2.0 (LGPLv2)
 
 **License allows public redevelopment?** 
-*fill in*
+Yes
 
 **Can you compile the projects source code?** 
-*fill in*
+Yes
 
 **What would be a sample test case for the existing software?** 
-*fill in*
+We imported a sample image and sucessfully ran Gray, EdgeDector and Invert
