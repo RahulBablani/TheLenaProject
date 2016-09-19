@@ -23,4 +23,32 @@ Marvin Image Processing Framework
 **URL for original project:** 
 https://sourceforge.net/projects/marvinproject/?source=typ_redirect
 
+**Any specialized hardware requirements?** 
+*fill in*
 
+**Any software license required that McMaster does not own?** 
+*fill in*
+
+**Programming language:** 
+Java
+
+**Is programming language feasible for your team?** 
+Yes
+
+**Is the domain knowledge understandable within one term?** 
+Yes
+
+**Number of lines of code in original:** 
+*fill in*
+
+**License:** 
+*fill in*
+
+**License allows public redevelopment?** 
+*fill in*
+
+**Can you compile the projects source code?** 
+*fill in*
+
+**What would be a sample test case for the existing software?** 
+*fill in*
