@@ -9,7 +9,7 @@ Team1
 **Team members:** 
   * Nezar Dimitri ~ dimitn
   * Rahul Bablani ~ bablanr
-  * Abeed Alibhai ~ 
+  * Abeed Alibhai ~ alibhaa
 
 **Orignal Project Name:** 
 Marvin Image Processing Framework
