@@ -1,0 +1,19 @@
+3XA3 Problem Statement
+Team 1								       
+Abeed Alibhai	- 1428809						
+Rahul Bablani – 1418434						
+Nezar Dimitri – 1422586						
+Due: September 23, 2016
+Professor: Dr. Spencer Smith
+L01
+
+What problem are you trying to solve? 
+	Images are like finger prints: each file has its own unique characteristics. Nonetheless, we all encounter the same problems with our digital images, over and over again. Pictures can be boring and use a little flavour to tackle that problem we introduced photo filters such as Gray scale, Edge detection and invert. Whether you use them for posting to social media or just for your own entertainment this image processing program. Correcting these problems goes a long way toward improving your digital photo dramatically.
+Why is this an important problem? 
+	Images are an integral part of our life and within society. Photos can mean cherishing memories while to others it could be their entire professional career. Photographers, directors, and artists all rely on photos and being able to alter those photos in different ways to their preference. Image filtering could be the difference between a home video and a holly wood block buster. For some, it may just be a fun way to cure boredom and share your photos with all your friends on social media. What may seem to be such a trivial problem can prove itself to be more important than it seems as it serves a purpose for a variety individuals. 
+What is the context of the problem you are solving? 
+    The target of this project is to develop a program capable of taking in an image and allowing it to be processed into 3 different filters then exporting the preferred image type into various available image formats. 
+Who are the stakeholders? 
+    Stakeholders will include: social media users (Instagram, Snapchat), photo/video editors, Team 1 (us) and future developers who will be able to take the task over from us the project requires more man-power.
+What is the environment for the software? 
+	We will be coding in Java using the Eclipse IDE. For our GUI we will be using the JFrame library, running it as a Java application. To apply the filters we will be using the Marvin framework plugins. The program will be available to run on Desktops and laptops for both PCs and Macintoshes.
