@@ -1,3 +1,16 @@
+\documentclass[11pt,fleqn]{article}
+
+\newcommand{\bc}{\begin{center}}
+\newcommand{\ec}{\end{center}}
+
+\begin{document}	% start of doc
+
+\bc
+{\LARGE \textbf{Laboratory 05 LaTeX}}\\[16mm]
+\ec
+
+\noindent \begin{tabular}{ p{6.7cm} l r} 
+
    Team Formation & Week of September 12 & 0\%\\ 
 
    Project Approval & Week of September 19 & 0\% \\
@@ -33,3 +46,8 @@
     - Test Report\newline
     - User's Guide (optional)\newline
     - Source Code\newline &  December 7 & 35\% %(2 weeks)
+
+\end{tabular}
+
+
+\end{document}
