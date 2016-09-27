@@ -1,5 +1,8 @@
 \documentclass[11pt,fleqn]{article}
 
+\usepackage{ulem}
+
+
 \newcommand{\bc}{\begin{center}}
 \newcommand{\ec}{\end{center}}
 
@@ -9,13 +12,14 @@
 {\LARGE \textbf{DEADLINES}}\\[16mm]
 \ec
 
+
 \noindent \begin{tabular}{ p{6.7cm} l r} 
 
-   Team Formation & Week of September 12 & 0\%\\ 
+   \sout {Team Formation} & \sout {Week of September 12} & \sout{0}\%\\ 
 
-   Project Approval & Week of September 19 & 0\% \\
+   \sout {Project Approval} & \sout {Week of September 19} & \sout{0}\%\\ 
 
-   Problem Statement & September 23 & 0.5\% \\
+   \sout {Problem Statement} & \sout {September 23} & \sout{0.5}\%\\ 
 
    Development Plan & September 30 & 0.5\%\\
 
