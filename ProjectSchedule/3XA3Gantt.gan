@@ -4,6 +4,7 @@
         <field id="tpd3" name="Name" width="301" order="0"/>
         <field id="tpd4" name="Begin date" width="91" order="1"/>
         <field id="tpd5" name="End date" width="102" order="2"/>
+        <option id="taskLabelUp" value="name"/>
         <option id="color.recent"><![CDATA[#00cc33 #cccccc #f4f4f4]]></option>
     </view>
     <view id="resource-table">
@@ -34,7 +35,6 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="34" name="Lab Excercises" color="#cccccc" meeting="false" start="2016-09-05" duration="68" complete="0" expand="true"/>
         <task id="0" name="Team Formation" color="#00cc33" meeting="false" start="2016-09-12" duration="5" complete="0" expand="true"/>
         <task id="8" name="Project Approval" color="#00cc33" meeting="false" start="2016-09-19" duration="5" complete="0" expand="true"/>
         <task id="16" name="Problem Statement" color="#00cc33" meeting="true" start="2016-09-23" duration="0" complete="0" expand="true"/>
@@ -42,39 +42,39 @@
         <task id="29" name="Requirements Document Revision 0" color="#00cc33" meeting="true" start="2016-10-07" duration="0" complete="0" expand="true"/>
         <task id="30" name="Proof of Concept Demonstration" color="#00cc33" meeting="false" start="2016-10-17" duration="5" complete="0" expand="true"/>
         <task id="31" name="Test Plan Revision 0" color="#00cc33" meeting="true" start="2016-10-28" duration="0" complete="0" expand="true"/>
-        <task id="32" name="Design Document Revision 0" color="#00cc33" meeting="false" start="2016-11-11" duration="1" complete="0" expand="true"/>
+        <task id="32" name="Design Document Revision 0" color="#00cc33" meeting="true" start="2016-11-11" duration="0" complete="0" expand="true"/>
         <task id="33" name="Revision 0 Demonstration" color="#00cc33" meeting="false" start="2016-11-14" duration="5" complete="0" expand="true"/>
         <task id="35" name="Final Demonstration (Revision 1)" color="#00cc33" meeting="false" start="2016-11-28" duration="5" complete="0" expand="true"/>
         <task id="36" name="Peer Eval of Other Team's Final Demo" color="#00cc33" meeting="false" start="2016-11-28" duration="5" complete="0" expand="true"/>
         <task id="37" name="Final Documentation (Revision 1)" color="#00cc33" meeting="true" start="2016-12-07" duration="0" complete="0" expand="true"/>
+        <task id="34" name="Lab Excercises" color="#cccccc" meeting="false" start="2016-09-05" duration="68" complete="0" expand="true"/>
     </tasks>
     <resources>
-        <resource id="0" name="Rahul Bablani" function="1" contacts="bablanr@mcmaster.ca" phone="647-393-8877">
-            <rate name="standard" value="350001"/>
-        </resource>
         <resource id="1" name="Nezar Dimitri" function="2" contacts="dimitn@mcmaster.ca" phone="6478638655">
             <rate name="standard" value="350000.75"/>
         </resource>
         <resource id="2" name="Abeed Alibhai" function="2" contacts="alibhaa@mcmaster.ca" phone="647-608-5119">
             <rate name="standard" value="350001"/>
         </resource>
+        <resource id="3" name="Rahul Bablani" function="1" contacts="bablanr@mcmaster.ca" phone="6473938877">
+            <rate name="standard" value="350001"/>
+        </resource>
     </resources>
     <allocations>
-        <allocation task-id="34" resource-id="0" function="1" responsible="true" load="0.0"/>
-        <allocation task-id="0" resource-id="0" function="1" responsible="true" load="100.0"/>
-        <allocation task-id="8" resource-id="0" function="1" responsible="true" load="40.0"/>
-        <allocation task-id="16" resource-id="0" function="1" responsible="true" load="40.0"/>
-        <allocation task-id="19" resource-id="0" function="1" responsible="true" load="40.0"/>
         <allocation task-id="34" resource-id="1" function="2" responsible="true" load="0.0"/>
-        <allocation task-id="0" resource-id="1" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="0" resource-id="1" function="2" responsible="true" load="33.3"/>
         <allocation task-id="8" resource-id="1" function="2" responsible="false" load="30.0"/>
         <allocation task-id="16" resource-id="1" function="2" responsible="false" load="30.0"/>
         <allocation task-id="19" resource-id="1" function="2" responsible="false" load="20.0"/>
         <allocation task-id="34" resource-id="2" function="2" responsible="true" load="0.0"/>
-        <allocation task-id="0" resource-id="2" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="0" resource-id="2" function="2" responsible="true" load="33.3"/>
         <allocation task-id="8" resource-id="2" function="2" responsible="false" load="30.0"/>
         <allocation task-id="16" resource-id="2" function="2" responsible="false" load="30.0"/>
         <allocation task-id="19" resource-id="2" function="2" responsible="false" load="40.0"/>
+        <allocation task-id="0" resource-id="3" function="1" responsible="true" load="33.3"/>
+        <allocation task-id="8" resource-id="3" function="1" responsible="true" load="40.0"/>
+        <allocation task-id="16" resource-id="3" function="1" responsible="true" load="40.0"/>
+        <allocation task-id="19" resource-id="3" function="1" responsible="true" load="40.0"/>
     </allocations>
     <vacations/>
     <previous/>
