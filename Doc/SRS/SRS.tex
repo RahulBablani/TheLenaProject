@@ -12,17 +12,15 @@
 }
 \usepackage[round]{natbib}
 
-\title{SE 3XA3: Development Plan\\Title of Project}
+\title{SE 3XA3: Development Plan\\Marvin Framework Image Processing}
 
-\author{Team \#, Team Name
-		\\ Student 1 name and macid
-		\\ Student 2 name and macid
-		\\ Student 3 name and macid
+\author{Team 1 \1
+		\\ Rahul Bablani - bablanr
+		\\ Abeed Alibhai - alibhaa
+		\\ Nezar Dimitri - dimitn
 }
 
 \date{\today}
-
-\input{../Comments}
 
 \begin{document}
 
@@ -38,8 +36,7 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Date 1 & 1.0 & Notes\\
-Date 2 & 1.1 & Notes\\
+October 11th & 1.0 & Notes\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -48,30 +45,56 @@ Date 2 & 1.1 & Notes\\
 
 \pagenumbering{arabic}
 
-This document describes the requirements for ....  The template for the Software
-Requirements Specification (SRS) is a subset of the Volere
-template~\citep{RobertsonAndRobertson2012}.  If you make further modifications
-to the template, you should explicity state what modifications were made.
+This document describes the requirements for Team 1.  The template for the Software Requirements Specification (SRS) is a subset of the Volere
+template~\citep{RobertsonAndRobertson2012}.
 
 \section{Project Drivers}
 
 \subsection{The Purpose of the Project}
 
+The purpose of this project, is to re-implement the open source image processing project “Marvin Frameworks”. This java framework allows clients to upload and process images from plain old photos, into photos with various luxurious filters, much like Instagram does. Once properly implemented, the processed image will then be available to export as an image file for use in social media, advertisements, etc.
+
 \subsection{The Stakeholders}
+
+Stakeholders will include: social media users (Instagram, Snapchat), photo/video editors, Team 1 (us).
 
 \subsubsection{The Client}
 
+Everyday photo takers wishing to transform their images into something more elegant by applying photo filters. 
+
 \subsubsection{The Customers}
+
+Users of social media outlets such as Instagram or Snapchat. This can be a platform to further build on those applications by adding new filters and implementing unique video processing filters that neither application currently incorporate. 
 
 \subsubsection{Other Stakeholders}
 
+Contributors: Future and current developers interested in the development process of this project and are willing to share their knowledge in order to further improve the image processing framework.\\
+
+
+Testers: This may include developers of our application, or general users of the program who will test the projects functionality and usability.\\
+
+
+Image Processing Specialist: Developing new in-depth image processing algorithms and possibly video processing algorithms as well and will require an expert in the field. The addition of a specialist will really allow our application to include some unique processing powers that will take us to the next level of image computing and allow us to compete with the likes of Instagram and Snapchat.
+
+
 \subsection{Mandated Constraints}
+
 
 \subsection{Naming Conventions and Terminology}
 
+Image Filter: A software routine that changes the appearance of an image or part of an image by altering the shades and colors of the pixels in some manner. Filters are used to increase brightness and contrast as well as to add a wide variety of textures, tones and special effects to a picture.\\
+
+Image Processing: the analysis and manipulation of a digitized image, especially in order to improve its quality.\\
+
+Framework: A framework provides functionalities/solution to the particular problem area. Definition from wiki: A software framework, in computer programming, is an abstraction in which common code providing generic functionality can be selectively overridden or specialized by user code providing specific functionality.
+
+
 \subsection{Relevant Facts and Assumptions}
 
-User characteristics should go under assumptions.
+
+- Users will have a basic understanding of how to work a computer\\
+- Desktop can support a Java application
+
 
 \section{Functional Requirements}
 
@@ -111,24 +134,56 @@ issues that should be considered for every engineering project.
 \section{Project Issues}
 
 \subsection{Open Issues}
+At the current stage of development there are no issues to be considered.
 
 \subsection{Off-the-Shelf Solutions}
 
+There are many implementations of Marvin frameworks in Java, which we plan on using as a reference to ensure we are following the standard coding style.
+
 \subsection{New Problems}
+
+Currently we are using the Marvin framework image processing filters and implementing them for a better user experience so no new problems should arise. We are also considering adding video processing at this point but it may be out of the scope due to our time constraint but that would be a lot harder to implement resulting in more natural occurring problems.
 
 \subsection{Tasks}
 
+
+- Requirements document revision 0\\
+- Test plan revision 0\\
+- Proof of concept demonstration\\
+- Design document revision 0\\
+- Revision 0 demonstration\\
+- Test report revision 0\\
+- Final Demonstration revision 1\\  
+- Write final revisions to document\\
+
+
 \subsection{Migration to the New Product}
+
+N/A
 
 \subsection{Risks}
 
+There are no legal risks our products can violate due to the fact we do not store any personal information. The only risk our application can encounter is if our code is not efficient and uses too much ram when processing images and can cause the computer to overheat but no serious risk is applicable to our application.
+
 \subsection{Costs}
+
+There are no cost associated with the development of the project because we are redeveloping an open source project. If we plan to further development and add more features we could possibly need a bigger team but for now there will be no direct costs.
 
 \subsection{User Documentation and Training}
 
+For our project we plan to optimize the usability and implement a UI to be as straight forward as possible allowing any age group to be able to use our application.
+
 \subsection{Waiting Room}
 
+- Future releases my include buttons in different languages\\
+- Our application could possibly implement video filter  processing\\
+
 \subsection{Ideas for Solutions}
+
+- \\ Users of the application will be able to download the the program in the language of their choice
+- \\ Create a functionality to allow video files to be processed. With the current time constraint this may not be plausible but with more time or more developers this can be a future addition to the application.
+
+
 
 \bibliographystyle{plainnat}
 
