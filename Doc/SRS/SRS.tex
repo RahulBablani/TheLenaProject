@@ -105,9 +105,9 @@ User characteristics should go under assumptions.
 \subsection{Performance Requirements}
 Speed
 \begin{itemize}
-\item The app should take no longer than 3 seconds to load.
-\item Users will be able to upload an image in a maximum of 2 seconds.
-\item All interaction between a user and the UI will be instantaneous. Response times should not exceed ½ a second to complete any action. This includes all the different filters that are available.
+\item The app should take no longer than PROCESSING_TIME to load.
+\item Users will be able to upload an image in a maximum of UPLOAD_TIME.
+\item All interaction between a user and the UI will be instantaneous. Response times should not exceed RESPONSE_TIME to complete any action. This includes all the different filters that are available.
 \end{itemize}
 Reliability
 \begin{itemize}
@@ -121,7 +121,7 @@ Quality
 Capacity
 \begin{itemize}
 \item Due to the local nature of the program and its independency from any sever there is no limit to the amount of people that may be processing there images.
-\item Storage is based solely on the limitations of each individual user. The application can support processing of an unlimited number of photos.
+\item Storage is based solely on the limitations of each individual user. The application can support processing of STORAGE amount of photos.
 \end{itemize}
 
 \subsection{Operational and Environmental Requirements}
@@ -201,8 +201,12 @@ additional information.
 
 \subsection{Symbolic Parameters}
 
-The definition of the requirements will likely call for SYMBOLIC\_CONSTANTS.
-Their values are defined in this section for easy maintenance.
+\begin{itemize}
+\item PROCESSING_TIME = 3 Seconds
+\item UPLOAD_TIME = 2 Seconds
+\item RESPONSE_TIME = 1/2 a Second
+\item STORAGE = Disk Space of User
+\end{itemize}
 
 
 \end{document}
