@@ -1,6 +1,6 @@
 # The Lena Project
 
-Team Name: NAR Developers 
+Team Name: NAR Developments 
 
 Team Members: Nezar Dimitri, Abeed Alibhai, Rahul Bablani
 
