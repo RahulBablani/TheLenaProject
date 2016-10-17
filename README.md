@@ -1,8 +1,8 @@
-# Image Processing App
+# The Lena Project
 
-Team Name: Team1
+Team Name: NAR Developments 
 
-Team Members: Nezar Dimitri, Rahul Bablani, Abeed Alibhai
+Team Members: Nezar Dimitri, Abeed Alibhai, Rahul Bablani
 
 This project is a reimplementation of [Marvin Image Processing Framework](https://sourceforge.net/projects/marvinproject/?source=typ_redirect "sourceforge.net/projects/marvinproject")
 
