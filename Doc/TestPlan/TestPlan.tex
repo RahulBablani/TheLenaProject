@@ -29,7 +29,6 @@
 \pagenumbering{roman}
 \tableofcontents
 \listoftables
-\listoffigures
 
 \begin{table}[bp]
 \caption{\bf Revision History}
@@ -133,73 +132,123 @@ See Gantt Chart by clicking the following hyperlink:
 	
 \subsection{Tests for Functional Requirements}
 
-\subsubsection{Area of Testing1}
-		
-\paragraph{Title for Test}
-
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{Filter}
+Type: Functional Dynamic\\ \\
+Initial State: Picture is displayed in the form it was originally uploaded in\\ \\
+Input: Click each processing button (test will be repeated for each button, not clicked concurrently)\\ \\
+Output: The picture will be re displayed but the filter we be applied and it will be processed from its original state. \\ \\
+How test will be performed: The program will be ran and an image will be uploaded. One of the processing buttons will then be clicked and the corresponding filter should be applied. These steps will be repeated for all the processing options.
 
-Type: Functional, Dynamic, Manual, Static etc.
-					
-Initial State: 
-					
-Input: 
-					
-Output: 
-					
-How test will be performed: 
-					
-\item{test-id2\\}
+\item{Multiple Filters}
+Type: Functional Dynamic\\ \\
+Initial State: Picture is displayed with one filter already applied to it\\ \\
+Input: Click each processing button\\ \\
+Output: The picture will be re displayed but the filter will be applied and it will once again be processed form and already processed form \\ \\
+How the test will be performed: The program will be ran, a picture will be uploaded and then two filters will be applied without resetting the image.
 
-Type: Functional, Dynamic, Manual, Static etc.
-					
-Initial State: 
-					
-Input: 
-					
-Output: 
-					
-How test will be performed: 
+\item{Upload}
+Type: Functional Dynamic \\ \\
+Initial State: No picture is uploaded or displayed \\ \\
+Input: Upload an image with file extensions (JPG, PNG, JPEG) \\ \\
+Output: Picture will successfully be uploaded and displayed. \\ \\
+How the test will be performed: when prompted a file extension will be input, next the file path and then a file location. The GUI will open and the image will be displayed
+\item{Save}
+Type: Functional Dynamic \\ \\
+Initial State: Picture is displayed in app and a filter has been applied \\ \\
+Input: Save and image \\ \\
+Output: Image will be saved in desired location \\ \\
+How the test will be performed: A picture will be uploaded then filtered. The save button will be clicked. The following prompts will be filled in with the desired file extension, file path and file name.
+
+\item{Resize}
+Type: Functional Dynamic \\ \\
+Initial State: Image processing app is open \\ \\
+Input: The Minimize “-“, maximize “□” and close buttons “x” are pressed \\ \\
+Output: the app will Minimize, Maximize then close \\ \\
+How the test will be performed: The app will be opened. While open the three mentioned buttons will be clicked.
+
+\item{Manual Resize}
+Type: Functional Dynamic \\ \\
+Initial State: Image processing app is open \\ \\
+Input: The bottom corner will be clicked then dragged \\ \\
+Output: The app window will resize to the desired position \\ \\
+How the test will be performed: The app will be opened. While open a mouse will be used to click and the bottom corner to resize the window
+ 
 
 \end{enumerate}
 
-\subsubsection{Area of Testing2}
-
-...
-
 \subsection{Tests for Nonfunctional Requirements}
-
-\subsubsection{Area of Testing1}
-		
-\paragraph{Title for Test}
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{Performance}
+Type: Structural Dynamic Automated \\ \\
+Initial State: Program has no GUI or picture uploaded\\ \\
+Input: The Enter button is clicked\\ \\
+Output: The GUI will open in PROCESS_TIME with the image uploaded and displayed in UPLOAD_TIME \\ \\
+How the test will be performed: A timer will be implemented to start right after the enter button is clicked. The timer will then stop after all the uploading and GUI commands are completed.
 
-Type: 
-					
-Initial State: 
-					
-Input/Condition: 
-					
-Output/Result: 
-					
-How test will be performed: 
-					
-\item{test-id2\\}
+\item{Reliability}
+Type: Structural Static Manual\\ \\
+Purpose: Test will look for any extreme cases that may not be handled with exceptions\\ \\
+How the test will be performed: Will go through code and analyze any deterministic sections of code (if statements, user inputs, file types) to catch any boundary cases that need to be handled
 
-Type: Functional, Dynamic, Manual, Static etc.
-					
-Initial State: 
-					
-Input: 
-					
-Output: 
-					
-How test will be performed: 
+\item{Look and Feel}
+Type: Structural Dynamic Manual\\ \\
+Initial State: No GUI has been launched \\ \\
+Input: Application is launched and picture is uploaded\\ \\
+Output: GUI will be built and image will appear in the application\\ \\
+How the test will be performed: The GUI will launched multiple times with different images uploaded to ensure they all amount to the same final display.
+
+\item{Environmental}
+Type: Functional Dynamic manual\\ \\
+Initial State: No picture is uploaded or displayed \\ \\
+Input: Upload an image with file extensions (JPG, PNG, JPEG) \\ \\
+Output: Picture will successfully be uploaded and displayed. \\ \\
+How the test will be performed: When prompted a file extension will be input, next the file path and then a file location. The GUI will open and the image will be displayed
+
+\item{Quality}
+Type: Structural Dynamic Manual\\ \\
+Initial State: Image is uploaded and displayed on GUI\\ \\
+Input: Process the image with multiple filters\\ \\
+Output: The image will process according to the filters chosen but the quality will not be affected\\ \\
+How the test will be performed: The app will be opened and an image with QUALITY amount of pixels. The image will go through N changes and saved. The saved image should have QUALITY amount of pixels.
+
+\item{Usability}
+Type: Structural Dynamic Automated\\ \\
+Initial State: Closed application\\ \\
+Input: Variety of inputs to run through the program\\ \\
+Output: User will have saved a filtered image\\ \\
+How the test will be performed: A function will be written to count the number of clicks that occur while the program is running. A User will be asked to start, upload, filer then save and image. The number of clicks will be recorded and should equal CLICKS
+
+\item{Maintainability}
+Type: Functional Dynamic Manual\\ \\
+Initial State: Program is stored on USB\\ \\
+Input: Launch Application\\ \\
+Output: Application will open\\ \\
+How the test will be performed: The program files will be transferred onto a USB. We will then run the program on a different computer straight off the USB.
+
+\item{Security}
+Type: Structural Static Manual\\ \\
+Purpose: Check to see if Users can access the complex algorithms from the Marvin Framework that are passed into our program\\ \\
+How the test will be performed: The code will be scrutinized for any access point to the Marvin Framework algorithms
+
+\item{Cultural}
+Type: Structural Static Manual\\ \\
+Purpose: To find any aspects of the program that maybe offensive to some users\\ \\
+How the test will be performed: A survey will be held asking users if they found any aspects of our program to be culturally offensive
+
+\item{legal}
+Type: Structural Static Manual\\ \\
+Purpose: To ensure no legal suits can be held against us \\ \\
+How the test will be performed: We will manually go through all the patents that relate to image processing
+
+\item{Health and Safety}
+Type: Static Manual\\ \\
+Purpose: Identify the amount of strain our program puts on a user’s eye\\ \\
+How the test will be performed: Users will be asked to spend ten minutes using our application and rate their eye strain on a scale of 1 to 10
+ 
 
 \end{enumerate}
 
@@ -273,8 +322,14 @@ This is where you can place additional information.
 
 \subsection{Symbolic Parameters}
 
-The definition of the test cases will call for SYMBOLIC\_CONSTANTS.
-Their values are defined in this section for easy maintenance.
+\begin{itemize}
+\item PROCESSING\_TIME = 3 Seconds
+\item UPLOAD\_TIME = 2 Seconds
+\item RESPONSE\_TIME = 1/2 a Second
+\item STORAGE = Disk Space of User
+\item QUALITY = Number of pixels of uplaoded image
+\item CLICKS = 8
+\end{itemize}
 
 \subsection{Usability Survey Questions?}
 
