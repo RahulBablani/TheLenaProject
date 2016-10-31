@@ -12,15 +12,17 @@
 }
 \usepackage[round]{natbib}
 
-\title{SE 3XA3: Test Plan\\TheLenaProject}
+\title{SE 3XA3: Test Plan\\Title of Project}
 
-\author{Team 1, Team NAR
-		\\ Rahul Bablani - bablanr
-		\\ Abeed Alibhai - alibhaa
-		\\ Nezar Dimitri - dimitn
+\author{Team \#, Team Name
+		\\ Student 1 name and macid
+		\\ Student 2 name and macid
+		\\ Student 3 name and macid
 }
 
 \date{\today}
+
+\input{../Comments}
 
 \begin{document}
 
@@ -52,11 +54,7 @@ This document ...
 
 \subsection{Purpose}
 
-The purpose of this project, is to re-implement the open source image processing project Marvin Frameworks. This Java framework allows clients to upload and process normal photos, into elegant images by applying one of the various filters available in our application, much like Instagram does. Once properly implemented, the processed image will then be available to export as an image file for use in social media, advertisements, etc.
-
 \subsection{Scope}
-
-This Test Plan is focused on describing how each test case should be constructed and implemented, showing appropriate inputs and expected outputs. It will not go in-depth how each function being tested is implemented
 
 \subsection{Acronyms, Abbreviations, and Symbols}
 	
@@ -67,9 +65,8 @@ This Test Plan is focused on describing how each test case should be constructed
 \toprule
 \textbf{Abbreviation} & \textbf{Definition} \\
 \midrule
-JPEG: & Joint Photographic Experts Group\\
-PNG:  & Portable Network Graphics\\
-EULA: & End User License Agreement\\
+Abbreviation1 & Definition1\\
+Abbreviation2 & Definition2\\
 \bottomrule
 \end{tabularx}
 
@@ -82,20 +79,14 @@ EULA: & End User License Agreement\\
 \toprule
 \textbf{Term} & \textbf{Definition}\\
 \midrule
-
-Image Filter: & A software routine that changes the appearance of an image or part of an image by altering the shades and colours of the pixels in some manner. Filters are used to increase brightness and contrast as well as to add a wide variety of textures, tones and special effects to a picture.\\ 
-Image \\ Processing: & The analysis and manipulation of a digitized image, especially in order to improve its quality. \\
-\\Framework: & In computer programming, a framework is an abstraction in which common code providing generic functionality can be selectively overridden or specialized by user code providing specific functionality.\\
-\\JUnit: & A unit testing framework for the Java programming language. It plays a crucial role test-driven development\\
-
-
+Term1 & Definition1\\
+Term2 & Definition2\\
 \bottomrule
 \end{tabularx}
 
 \end{table}	
 
 \subsection{Overview of Document}
-This test plan document for TheLenaProject revision 0, will primarily be responsible for addressing the testing planning of the various functions implemented within our project.
 
 \section{Plan}
 	
@@ -114,8 +105,7 @@ This test plan document for TheLenaProject revision 0, will primarily be respons
 
 \subsection{Testing Schedule}
 		
-See Gantt Chart by clicking the following hyperlink: 
-\href{https://gitlab.cas.mcmaster.ca/dimitn/image_processing_app/tree/master/ProjectSchedule}{Gantt Chart}
+See Gantt Chart at the following url ...
 
 \section{System Test Description}
 	
@@ -235,12 +225,19 @@ How test will be performed:
 
 	
 \section{Comparison to Existing Implementation}	
-			Compared to the existing implementation of the open source image processing project Marvin Frameworks we have added 3 major features that distinguish us from them. We have added a fairly simple but elegant interface that allows the user to import and export image files. The GUI is very simple to allow any regular computer user to easily navigate the application and successfully upload, customize and export their image.  Our application has also been customized to allow a single image to be processed more than once with multiple filters to allow such features as: grayscale, invert and edge detection all at once on one single image as well as being able to process a single filter multiple times to intensify the effect of the filter. We have finally implemented an exporting tool to save the image as a .png or .jpg file which the original Marvin Frameworks project did not include. Next steps will be to implement error handling methodologies and look into the addition of video processing which may be out of the scope for the time restriction we are limited too but may be a future implementation of our application.
+				
 \section{Unit Testing Plan}
 		
 \subsection{Unit testing of internal functions}
+
+Our project as of now has one internal function (besides the "main" function).
+This internal function is the \textbf{actionPerformed} function used to listen to the actions in the GUI. There are a series of if-statements for the logic connecting each button to the correct plug-ins, and subsequently applying the correct filters to the image, resetting the image back to it original state, or prompting the user to save the edited image whilst choosing a name and a destination for it.
+
+There are 3 types of buttons associated to the GUI: filter buttons, a reset button, and a save button. The unit tests for this function will be reflected differently based on the type of button. For the filter buttons we will be testing the correctness of the filter applied based on the selected filter. We will test from different initial states, one where the photo is in its original state right before the filter is applied, and other where the photo has already been edited by another filter and the filter is being applied on top of that. The unit test will only pass if the correctly selected filter was applied without making any other alterations to the photo. The second type of button is the reset button, the unit test for this will be testing the correctness of the "reset" from any initial state and will only pass if the image is is fully restored to its original state. The final type of button is the save button. There will be two unit tests for this. The first one will be testing the checking if the user is prompted with the export interface to save their edited image, and will only pass if the interface is made available for the user. The second unit test is linked to the output files and will be explained in the next subsection (6.2 Unit testing of output files).
 		
 \subsection{Unit testing of output files}		
+
+The only output file generated in this project is the processed version of the image that the user desires to save to their local drive. This is possible through the save button, which subsequently prompts the user with the export interface where they can select the image type, destination folder, and name of the finished product. The first unit test for the save button was discussed in the previous subsection (6.1 Unit testing of internal functions), but as stated there, there is a second unit test which is linked to the output files. This will be testing the reliability, compatibility, as well as the actual correctness of the output file. The unit test will pass if, after the prompting for export, the image is save with the correct formatting, with the right file path, and that the image is identical to how it looked in the preview window (with selected filters applied to it). This must consistently, work as well have some error handling to be able to notify the user if the selected format, file path, chosen name are invalid.
 
 \bibliographystyle{plainnat}
 
