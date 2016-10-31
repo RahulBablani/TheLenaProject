@@ -127,47 +127,67 @@ See Gantt Chart by clicking the following hyperlink:
 
 \begin{enumerate}
 
-\item{Filter}
-Type: Functional Dynamic\\ \\
-Initial State: Picture is displayed in the form it was originally uploaded in\\ \\
-Input: Click each processing button (test will be repeated for each button, not clicked concurrently)\\ \\
-Output: The picture will be re displayed but the filter we be applied and it will be processed from its original state. \\ \\
-How test will be performed: The program will be ran and an image will be uploaded. One of the processing buttons will then be clicked and the corresponding filter should be applied. These steps will be repeated for all the processing options.
+\item{test-id1\\}
 
-\item{Multiple Filters}
-Type: Functional Dynamic\\ \\
-Initial State: Picture is displayed with one filter already applied to it\\ \\
-Input: Click each processing button\\ \\
-Output: The picture will be re displayed but the filter will be applied and it will once again be processed form and already processed form \\ \\
-How the test will be performed: The program will be ran, a picture will be uploaded and then two filters will be applied without resetting the image.
+Type: Functional, Dynamic, Manual, Static etc.
+					
+Initial State: 
+					
+Input: 
+					
+Output: 
+					
+How test will be performed: 
+					
+\item{test-id2\\}
 
-\item{Upload}
-Type: Functional Dynamic \\ \\
-Initial State: No picture is uploaded or displayed \\ \\
-Input: Upload an image with file extensions (JPG, PNG, JPEG) \\ \\
-Output: Picture will successfully be uploaded and displayed. \\ \\
-How the test will be performed: when prompted a file extension will be input, next the file path and then a file location. The GUI will open and the image will be displayed
-\item{Save}
-Type: Functional Dynamic \\ \\
-Initial State: Picture is displayed in app and a filter has been applied \\ \\
-Input: Save and image \\ \\
-Output: Image will be saved in desired location \\ \\
-How the test will be performed: A picture will be uploaded then filtered. The save button will be clicked. The following prompts will be filled in with the desired file extension, file path and file name.
+Type: Functional, Dynamic, Manual, Static etc.
+					
+Initial State: 
+					
+Input: 
+					
+Output: 
+					
+How test will be performed: 
 
-\item{Resize}
-Type: Functional Dynamic \\ \\
-Initial State: Image processing app is open \\ \\
-Input: The Minimize “-“, maximize “□” and close buttons “x” are pressed \\ \\
-Output: the app will Minimize, Maximize then close \\ \\
-How the test will be performed: The app will be opened. While open the three mentioned buttons will be clicked.
+\end{enumerate}
 
-\item{Manual Resize}
-Type: Functional Dynamic \\ \\
-Initial State: Image processing app is open \\ \\
-Input: The bottom corner will be clicked then dragged \\ \\
-Output: The app window will resize to the desired position \\ \\
-How the test will be performed: The app will be opened. While open a mouse will be used to click and the bottom corner to resize the window
- 
+\subsubsection{Area of Testing2}
+
+...
+
+\subsection{Tests for Nonfunctional Requirements}
+
+\subsubsection{Area of Testing1}
+		
+\paragraph{Title for Test}
+
+\begin{enumerate}
+
+\item{test-id1\\}
+
+Type: 
+					
+Initial State: 
+					
+Input/Condition: 
+					
+Output/Result: 
+					
+How test will be performed: 
+					
+\item{test-id2\\}
+
+Type: Functional, Dynamic, Manual, Static etc.
+					
+Initial State: 
+					
+Input: 
+					
+Output: 
+					
+How test will be performed: 
 
 \end{enumerate}
 
@@ -219,8 +239,15 @@ How test will be performed:
 \section{Unit Testing Plan}
 		
 \subsection{Unit testing of internal functions}
+
+Our project as of now has one internal function (besides the "main" function).
+This internal function is the \textbf{actionPerformed} function used to listen to the actions in the GUI. There are a series of if-statements for the logic connecting each button to the correct plug-ins, and subsequently applying the correct filters to the image, resetting the image back to it original state, or prompting the user to save the edited image whilst choosing a name and a destination for it.
+
+There are 3 types of buttons associated to the GUI: filter buttons, a reset button, and a save button. The unit tests for this function will be reflected differently based on the type of button. For the filter buttons we will be testing the correctness of the filter applied based on the selected filter. We will test from different initial states, one where the photo is in its original state right before the filter is applied, and other where the photo has already been edited by another filter and the filter is being applied on top of that. The unit test will only pass if the correctly selected filter was applied without making any other alterations to the photo. The second type of button is the reset button, the unit test for this will be testing the correctness of the "reset" from any initial state and will only pass if the image is is fully restored to its original state. The final type of button is the save button. There will be two unit tests for this. The first one will be testing the checking if the user is prompted with the export interface to save their edited image, and will only pass if the interface is made available for the user. The second unit test is linked to the output files and will be explained in the next subsection (6.2 Unit testing of output files).
 		
 \subsection{Unit testing of output files}		
+
+The only output file generated in this project is the processed version of the image that the user desires to save to their local drive. This is possible through the save button, which subsequently prompts the user with the export interface where they can select the image type, destination folder, and name of the finished product. The first unit test for the save button was discussed in the previous subsection (6.1 Unit testing of internal functions), but as stated there, there is a second unit test which is linked to the output files. This will be testing the reliability, compatibility, as well as the actual correctness of the output file. The unit test will pass if, after the prompting for export, the image is save with the correct formatting, with the right file path, and that the image is identical to how it looked in the preview window (with selected filters applied to it). This must consistently, work as well have some error handling to be able to notify the user if the selected format, file path, chosen name are invalid.	
 
 \bibliographystyle{plainnat}
 
