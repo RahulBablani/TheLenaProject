@@ -186,7 +186,7 @@ How the test will be performed: The app will be opened. While open a mouse will 
 Type: Structural Dynamic Automated \\ \\
 Initial State: Program has no GUI or picture uploaded\\ \\
 Input: The Enter button is clicked\\ \\
-Output: The GUI will open in PROCESS_TIME with the image uploaded and displayed in UPLOAD_TIME \\ \\
+Output: The GUI will open in PROCESS\_TIME with the image uploaded and displayed in UPLOAD\_TIME \\ \\
 How the test will be performed: A timer will be implemented to start right after the enter button is clicked. The timer will then stop after all the uploading and GUI commands are completed.
 
 \item{Reliability}
@@ -252,49 +252,64 @@ How the test will be performed: Users will be asked to spend ten minutes using o
 
 \end{enumerate}
 
-\subsubsection{Area of Testing2}
-
-...
-
 \section{Tests for Proof of Concept}
 
-\subsection{Area of Testing1}
+\subsection{Tests for Functional Requirements}
 		
-\paragraph{Title for Test}
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{Upload}
+Type: Functional Dynamic \\ \\
+Initial State: No picture is uploaded or displayed \\ \\
+Input: Upload an image with file extensions (JPG, PNG, JPEG) \\ \\
+Output: Picture will successfully be uploaded and displayed. \\ \\
+How the test will be performed: when prompted a file extension will be input, next the file path and then a file location. The GUI will open and the image will be displayed
 
-Type: Functional, Dynamic, Manual, Static etc.
-					
-Initial State: 
-					
-Input: 
-					
-Output: 
-					
-How test will be performed: 
-					
-\item{test-id2\\}
+\item{Save}
+Type: Functional Dynamic \\ \\
+Initial State: Picture is displayed in app and a filter has been applied \\ \\
+Input: Save and image \\ \\
+Output: Image will be saved in desired location \\ \\
+How the test will be performed: A picture will be uploaded then filtered. The save button will be clicked. The following prompts will be filled in with the desired file extension, file path and file name.
 
-Type: Functional, Dynamic, Manual, Static etc.
-					
-Initial State: 
-					
-Input: 
-					
-Output: 
-					
-How test will be performed: 
+\item{Filter}
+Type: Functional Dynamic\\ \\
+Initial State: Picture is displayed in the form it was originally uploaded in\\ \\
+Input: Click each processing button (test will be repeated for each button, not clicked concurrently)\\ \\
+Output: The picture will be re displayed but the filter we be applied and it will be processed from its original state. \\ \\
+How test will be performed: The program will be ran and an image will be uploaded. One of the processing buttons will then be clicked and the corresponding filter should be applied. These steps will be repeated for all the processing options.
+
 
 \end{enumerate}
 
-\subsection{Area of Testing2}
+\subsection{Tests for Nonfunctional Requirements}
 
-...
+\begin{enumerate}
 
-	
+\item{Look and Feel}
+Type: Structural Dynamic Manual\\ \\
+Initial State: No GUI has been launched \\ \\
+Input: Application is launched and picture is uploaded\\ \\
+Output: GUI will be built and image will appear in the application\\ \\
+How the test will be performed: The GUI will launched multiple times with different images uploaded to ensure they all amount to the same final display.
+
+\item{Environmental}
+Type: Functional Dynamic manual\\ \\
+Initial State: No picture is uploaded or displayed \\ \\
+Input: Upload an image with file extensions (JPG, PNG, JPEG) \\ \\
+Output: Picture will successfully be uploaded and displayed. \\ \\
+How the test will be performed: When prompted a file extension will be input, next the file path and then a file location. The GUI will open and the image will be displayed
+
+\item{Usability}
+Type: Structural Dynamic Automated\\ \\
+Initial State: Closed application\\ \\
+Input: Variety of inputs to run through the program\\ \\
+Output: User will have saved a filtered image\\ \\
+How the test will be performed: A function will be written to count the number of clicks that occur while the program is running. A User will be asked to start, upload, filer then save and image. The number of clicks will be recorded and should equal CLICKS
+
+\end{enumerate}
+
 \section{Comparison to Existing Implementation}	
 			Compared to the existing implementation of the open source image processing project Marvin Frameworks we have added 3 major features that distinguish us from them. We have added a fairly simple but elegant interface that allows the user to import and export image files. The GUI is very simple to allow any regular computer user to easily navigate the application and successfully upload, customize and export their image.  Our application has also been customized to allow a single image to be processed more than once with multiple filters to allow such features as: grayscale, invert and edge detection all at once on one single image as well as being able to process a single filter multiple times to intensify the effect of the filter. We have finally implemented an exporting tool to save the image as a .png or .jpg file which the original Marvin Frameworks project did not include. Next steps will be to implement error handling methodologies and look into the addition of video processing which may be out of the scope for the time restriction we are limited too but may be a future implementation of our application.
 \section{Unit Testing Plan}
