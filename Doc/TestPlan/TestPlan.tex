@@ -1,0 +1,359 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=blue
+}
+\usepackage[round]{natbib}
+
+\title{SE 3XA3: Test Plan\\TheLenaProject}
+
+\author{Team 1, Team NAR
+        \\ Nezar Dimitri - dimitn
+        \\ Abeed Alibhai - alibhaa
+		\\ Rahul Bablani - bablanr
+}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
+
+\begin{table}[bp]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+October 21 2016 & 1.0 & Completed Revision 0: General Information and Unit Testing Plan\\
+October 24 2016 & 1.1 & Completed Revision 0: Plan, System Test Description and Appendix\\
+October 27 2016 & 1.2 & Completed Revision 0: Comparison to Existing Implementation and Tests for Proof of Concept\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\pagenumbering{arabic}
+
+\section{General Information}
+
+\subsection{Purpose}
+
+The purpose of this project, is to re-implement the open source image processing project Marvin Frameworks. This Java framework allows clients to upload and process normal photos, into elegant images by applying one of the various filters available in our application, much like Instagram does. Once properly implemented, the processed image will then be available to export as an image file for use in social media, advertisements, etc.
+
+\subsection{Scope}
+
+This Test Plan is focused on describing how each test case should be constructed and implemented, showing appropriate inputs and expected outputs. It will not go in-depth how each function being tested is implemented
+
+\subsection{Acronyms, Abbreviations, and Symbols}
+	
+\begin{table}[hbp]
+\caption{\textbf{Table of Abbreviations}} \label{Table}
+
+\begin{tabularx}{\textwidth}{p{3cm}X}
+\toprule
+\textbf{Abbreviation} & \textbf{Definition} \\
+\midrule
+JPEG: & Joint Photographic Experts Group\\
+PNG:  & Portable Network Graphics\\
+EULA: & End User License Agreement\\
+\bottomrule
+\end{tabularx}
+
+\end{table}
+
+\begin{table}[!htbp]
+\caption{\textbf{Table of Definitions}} \label{Table}
+
+\begin{tabularx}{\textwidth}{p{3cm}X}
+\toprule
+\textbf{Term} & \textbf{Definition}\\
+\midrule
+
+Image Filter: & A software routine that changes the appearance of an image or part of an image by altering the shades and colours of the pixels in some manner. Filters are used to increase brightness and contrast as well as to add a wide variety of textures, tones and special effects to a picture.\\ 
+Image \\ Processing: & The analysis and manipulation of a digitized image, especially in order to improve its quality. \\
+\\Framework: & In computer programming, a framework is an abstraction in which common code providing generic functionality can be selectively overridden or specialized by user code providing specific functionality.\\
+\\JUnit: & A unit testing framework for the Java programming language. It plays a crucial role test-driven development\\
+
+
+\bottomrule
+\end{tabularx}
+
+\end{table}	
+
+\subsection{Overview of Document}
+This test plan document for TheLenaProject revision 0, will primarily be responsible for addressing the testing planning of the various functions implemented within our project.
+
+\section{Plan}
+	
+\subsection{Software Description}
+
+The software of this project applies a Java framework that allows clients to upload and process normal photos, into elegant images by applying one of the various filters available in our application, much like Instagram does. Once properly implemented, the processed image will then be available to export as an image file for use in social media, advertisements, etc.
+
+\subsection{Test Team}
+
+The following project members are responsible for all procedures of the validation
+process including writing and executing tests:
+
+\begin{itemize}
+\item{Nezar Dimitri}
+\item{Abeed Alibhai}
+\item{Rahul Bablani}
+\end{itemize}
+
+\subsection{Automated Testing Approach}
+
+Automated testing will be conducted using JUnit and will be used to test major functions.
+
+\subsection{Testing Tools}
+\begin{itemize}
+\item J-Unit will be implemented as the primary testing framework to run tests on all sections of the code.
+\item Different images and file types will be used to test the file input and output of the application.
+\item Black box testing will be done on Windows, Mac, and Linux based operating systems to ensure all functional and non-functional requirements are fulfilled on all platforms.
+\end{itemize}
+
+\subsection{Testing Schedule}
+		
+See Gantt Chart by clicking the following hyperlink: 
+\href{https://gitlab.cas.mcmaster.ca/dimitn/image_processing_app/tree/master/ProjectSchedule}{Gantt Chart}
+
+\section{System Test Description}
+	
+\subsection{Tests for Functional Requirements}
+
+\begin{enumerate}
+
+\item{Filter}
+Type: Functional Dynamic\\ \\
+Initial State: Picture is displayed in the form it was originally uploaded in\\ \\
+Input: Click each processing button (test will be repeated for each button, not clicked concurrently)\\ \\
+Output: The picture will be re displayed but the filter we be applied and it will be processed from its original state. \\ \\
+How test will be performed: The program will be ran and an image will be uploaded. One of the processing buttons will then be clicked and the corresponding filter should be applied. These steps will be repeated for all the processing options.
+
+\item{Multiple Filters}
+Type: Functional Dynamic\\ \\
+Initial State: Picture is displayed with one filter already applied to it\\ \\
+Input: Click each processing button\\ \\
+Output: The picture will be re displayed but the filter will be applied and it will once again be processed form and already processed form \\ \\
+How the test will be performed: The program will be ran, a picture will be uploaded and then two filters will be applied without resetting the image.
+
+\item{Upload}
+Type: Functional Dynamic \\ \\
+Initial State: No picture is uploaded or displayed \\ \\
+Input: Upload an image with file extensions (JPG, PNG, JPEG) \\ \\
+Output: Picture will successfully be uploaded and displayed. \\ \\
+How the test will be performed: when prompted a file extension will be input, next the file path and then a file location. The GUI will open and the image will be displayed
+\item{Save}
+Type: Functional Dynamic \\ \\
+Initial State: Picture is displayed in app and a filter has been applied \\ \\
+Input: Save and image \\ \\
+Output: Image will be saved in desired location \\ \\
+How the test will be performed: A picture will be uploaded then filtered. The save button will be clicked. The following prompts will be filled in with the desired file extension, file path and file name.
+
+\item{Resize}
+Type: Functional Dynamic \\ \\
+Initial State: Image processing app is open \\ \\
+Input: The Minimize “-“, maximize “□” and close buttons “x” are pressed \\ \\
+Output: the app will Minimize, Maximize then close \\ \\
+How the test will be performed: The app will be opened. While open the three mentioned buttons will be clicked.
+
+\item{Manual Resize}
+Type: Functional Dynamic \\ \\
+Initial State: Image processing app is open \\ \\
+Input: The bottom corner will be clicked then dragged \\ \\
+Output: The app window will resize to the desired position \\ \\
+How the test will be performed: The app will be opened. While open a mouse will be used to click and the bottom corner to resize the window
+ 
+
+\end{enumerate}
+
+\subsection{Tests for Nonfunctional Requirements}
+
+\begin{enumerate}
+
+\item{Performance}
+Type: Structural Dynamic Automated \\ \\
+Initial State: Program has no GUI or picture uploaded\\ \\
+Input: The Enter button is clicked\\ \\
+Output: The GUI will open in PROCESS\_TIME with the image uploaded and displayed in UPLOAD\_TIME \\ \\
+How the test will be performed: A timer will be implemented to start right after the enter button is clicked. The timer will then stop after all the uploading and GUI commands are completed.
+
+\item{Reliability}
+Type: Structural Static Manual\\ \\
+Purpose: Test will look for any extreme cases that may not be handled with exceptions\\ \\
+How the test will be performed: Will go through code and analyze any deterministic sections of code (if statements, user inputs, file types) to catch any boundary cases that need to be handled
+
+\item{Look and Feel}
+Type: Structural Dynamic Manual\\ \\
+Initial State: No GUI has been launched \\ \\
+Input: Application is launched and picture is uploaded\\ \\
+Output: GUI will be built and image will appear in the application\\ \\
+How the test will be performed: The GUI will launched multiple times with different images uploaded to ensure they all amount to the same final display.
+
+\item{Environmental}
+Type: Functional Dynamic manual\\ \\
+Initial State: No picture is uploaded or displayed \\ \\
+Input: Upload an image with file extensions (JPG, PNG, JPEG) \\ \\
+Output: Picture will successfully be uploaded and displayed. \\ \\
+How the test will be performed: When prompted a file extension will be input, next the file path and then a file location. The GUI will open and the image will be displayed
+
+\item{Quality}
+Type: Structural Dynamic Manual\\ \\
+Initial State: Image is uploaded and displayed on GUI\\ \\
+Input: Process the image with multiple filters\\ \\
+Output: The image will process according to the filters chosen but the quality will not be affected\\ \\
+How the test will be performed: The app will be opened and an image with QUALITY amount of pixels. The image will go through N changes and saved. The saved image should have QUALITY amount of pixels.
+
+\item{Usability}
+Type: Structural Dynamic Automated\\ \\
+Initial State: Closed application\\ \\
+Input: Variety of inputs to run through the program\\ \\
+Output: User will have saved a filtered image\\ \\
+How the test will be performed: A function will be written to count the number of clicks that occur while the program is running. A User will be asked to start, upload, filer then save and image. The number of clicks will be recorded and should equal CLICKS
+
+\item{Maintainability}
+Type: Functional Dynamic Manual\\ \\
+Initial State: Program is stored on USB\\ \\
+Input: Launch Application\\ \\
+Output: Application will open\\ \\
+How the test will be performed: The program files will be transferred onto a USB. We will then run the program on a different computer straight off the USB.
+
+\item{Security}
+Type: Structural Static Manual\\ \\
+Purpose: Check to see if Users can access the complex algorithms from the Marvin Framework that are passed into our program\\ \\
+How the test will be performed: The code will be scrutinized for any access point to the Marvin Framework algorithms
+
+\item{Cultural}
+Type: Structural Static Manual\\ \\
+Purpose: To find any aspects of the program that maybe offensive to some users\\ \\
+How the test will be performed: A survey will be held asking users if they found any aspects of our program to be culturally offensive
+
+\item{legal}
+Type: Structural Static Manual\\ \\
+Purpose: To ensure no legal suits can be held against us \\ \\
+How the test will be performed: We will manually go through all the patents that relate to image processing
+
+\item{Health and Safety}
+Type: Static Manual\\ \\
+Purpose: Identify the amount of strain our program puts on a user’s eye\\ \\
+How the test will be performed: Users will be asked to spend ten minutes using our application and rate their eye strain on a scale of 1 to 10
+ 
+
+\end{enumerate}
+
+\section{Tests for Proof of Concept}
+
+\subsection{Tests for Functional Requirements}
+		
+
+\begin{enumerate}
+
+\item{Upload}
+Type: Functional Dynamic \\ \\
+Initial State: No picture is uploaded or displayed \\ \\
+Input: Upload an image with file extensions (JPG, PNG, JPEG) \\ \\
+Output: Picture will successfully be uploaded and displayed. \\ \\
+How the test will be performed: when prompted a file extension will be input, next the file path and then a file location. The GUI will open and the image will be displayed
+
+\item{Save}
+Type: Functional Dynamic \\ \\
+Initial State: Picture is displayed in app and a filter has been applied \\ \\
+Input: Save and image \\ \\
+Output: Image will be saved in desired location \\ \\
+How the test will be performed: A picture will be uploaded then filtered. The save button will be clicked. The following prompts will be filled in with the desired file extension, file path and file name.
+
+\item{Filter}
+Type: Functional Dynamic\\ \\
+Initial State: Picture is displayed in the form it was originally uploaded in\\ \\
+Input: Click each processing button (test will be repeated for each button, not clicked concurrently)\\ \\
+Output: The picture will be re displayed but the filter we be applied and it will be processed from its original state. \\ \\
+How test will be performed: The program will be ran and an image will be uploaded. One of the processing buttons will then be clicked and the corresponding filter should be applied. These steps will be repeated for all the processing options.
+
+
+\end{enumerate}
+
+\subsection{Tests for Nonfunctional Requirements}
+
+\begin{enumerate}
+
+\item{Look and Feel}
+Type: Structural Dynamic Manual\\ \\
+Initial State: No GUI has been launched \\ \\
+Input: Application is launched and picture is uploaded\\ \\
+Output: GUI will be built and image will appear in the application\\ \\
+How the test will be performed: The GUI will launched multiple times with different images uploaded to ensure they all amount to the same final display.
+
+\item{Environmental}
+Type: Functional Dynamic manual\\ \\
+Initial State: No picture is uploaded or displayed \\ \\
+Input: Upload an image with file extensions (JPG, PNG, JPEG) \\ \\
+Output: Picture will successfully be uploaded and displayed. \\ \\
+How the test will be performed: When prompted a file extension will be input, next the file path and then a file location. The GUI will open and the image will be displayed
+
+\item{Usability}
+Type: Structural Dynamic Automated\\ \\
+Initial State: Closed application\\ \\
+Input: Variety of inputs to run through the program\\ \\
+Output: User will have saved a filtered image\\ \\
+How the test will be performed: A function will be written to count the number of clicks that occur while the program is running. A User will be asked to start, upload, filer then save and image. The number of clicks will be recorded and should equal CLICKS
+
+\end{enumerate}
+
+\section{Comparison to Existing Implementation}	
+			Compared to the existing implementation of the open source image processing project Marvin Frameworks we have added 3 major features that distinguish us from them. We have added a fairly simple but elegant interface that allows the user to import and export image files. The GUI is very simple to allow any regular computer user to easily navigate the application and successfully upload, customize and export their image.  Our application has also been customized to allow a single image to be processed more than once with multiple filters to allow such features as: grayscale, invert and edge detection all at once on one single image as well as being able to process a single filter multiple times to intensify the effect of the filter. We have finally implemented an exporting tool to save the image as a .png or .jpg file which the original Marvin Frameworks project did not include. Next steps will be to implement error handling methodologies and look into the addition of video processing which may be out of the scope for the time restriction we are limited too but may be a future implementation of our application.
+\section{Unit Testing Plan}
+		
+\subsection{Unit testing of internal functions}
+
+Our project as of now has one internal function (besides the "main" function).
+This internal function is the \textbf{actionPerformed} function used to listen to the actions in the GUI. There are a series of if-statements for the logic connecting each button to the correct plug-ins, and subsequently applying the correct filters to the image, resetting the image back to it original state, or prompting the user to save the edited image whilst choosing a name and a destination for it.
+
+There are 3 types of buttons associated to the GUI: filter buttons, a reset button, and a save button. The unit tests for this function will be reflected differently based on the type of button. For the filter buttons we will be testing the correctness of the filter applied based on the selected filter. We will test from different initial states, one where the photo is in its original state right before the filter is applied, and other where the photo has already been edited by another filter and the filter is being applied on top of that. The unit test will only pass if the correctly selected filter was applied without making any other alterations to the photo. The second type of button is the reset button, the unit test for this will be testing the correctness of the "reset" from any initial state and will only pass if the image is is fully restored to its original state. The final type of button is the save button. There will be two unit tests for this. The first one will be testing the checking if the user is prompted with the export interface to save their edited image, and will only pass if the interface is made available for the user. The second unit test is linked to the output files and will be explained in the next subsection (6.2 Unit testing of output files).
+		
+\subsection{Unit testing of output files}		
+
+The only output file generated in this project is the processed version of the image that the user desires to save to their local drive. This is possible through the save button, which subsequently prompts the user with the export interface where they can select the image type, destination folder, and name of the finished product. The first unit test for the save button was discussed in the previous subsection (6.1 Unit testing of internal functions), but as stated there, there is a second unit test which is linked to the output files. This will be testing the reliability, compatibility, as well as the actual correctness of the output file. The unit test will pass if, after the prompting for export, the image is save with the correct formatting, with the right file path, and that the image is identical to how it looked in the preview window (with selected filters applied to it). This must consistently, work as well have some error handling to be able to notify the user if the selected format, file path, chosen name are invalid.	
+
+\bibliographystyle{plainnat}
+
+\bibliography{SRS}
+
+\newpage
+
+\section{Appendix}
+
+This is where you can place additional information.
+
+\subsection{Symbolic Parameters}
+
+\begin{itemize}
+\item PROCESSING\_TIME = 3 Seconds
+\item UPLOAD\_TIME = 2 Seconds
+\item RESPONSE\_TIME = 1/2 a Second
+\item STORAGE = Disk Space of User
+\item QUALITY = Number of pixels of uploaded image
+\item CLICKS = 8
+\end{itemize}
+
+\subsection{Usability Survey Questions?}
+
+We plan to hold a small beta test, targeting a wide variety of age groups and computer skill levels in order to determine the ease of usability for our application.  Such questions may be asked to our test group:
+
+\begin{itemize}
+	\item Does the application open on your computer? If so, how long does it take?
+	\item Are you able to successfully upload and save your file?
+	\item Are you able to successfully apply filter(s)?
+\end{itemize}
+
+\end{document}
