@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -15,8 +16,7 @@ import marvin.plugin.MarvinImagePlugin;
 import marvin.util.MarvinPluginLoader;
 
 import java.awt.event.WindowEvent;
-
-
+import java.io.File;
 import java.util.Scanner;  
 
 
@@ -159,15 +159,15 @@ public class LenaProcessing extends JFrame implements ActionListener
 
 
 			
-			JFrame exportFile = new JFrame("Import/Export Interface");
-			exportFile.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-	        //Add content to the window.
-			exportFile.add(new FileChoose());
-
-	        //Display the window.
-			exportFile.pack();
-			exportFile.setVisible(true);
+//			JFrame exportFile = new JFrame("Import/Export Interface");
+//			exportFile.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//
+//	        //Add content to the window.
+//			exportFile.add(new FileChoose());
+//
+//	        //Display the window.
+//			exportFile.pack();
+//			exportFile.setVisible(true);
 //			
 //			
 			String fileName ;
@@ -178,12 +178,27 @@ public class LenaProcessing extends JFrame implements ActionListener
 			
 			FileChoose newExport = new FileChoose();
 			fileName = newExport.getSaveFile();
+			
+			JFileChooser fc = new JFileChooser();
+			
+			String saveFile = null;
 
 
+			 int returnVal = fc.showSaveDialog(newExport);
+	            if (returnVal == JFileChooser.APPROVE_OPTION) {
+	                File file = fc.getSelectedFile();
+	                //This is where a real application would save the file.
+	                System.out.println("Saving: " + file.getName() + "\n");
+	               saveFile = file.getAbsolutePath();
+	                System.out.println("Path : " + saveFile);
+	            } else {
+	                System.out.println("Save command cancelled by user.\n");
+	            }
 
 			while (check==true){
 				//fileName = FileChoose.saveFile;
-				fileName = newExport.getSaveFile();
+				//fileName = newExport.getSaveFile();
+				fileName = saveFile;
 				System.out.println(fileName);
 				if(fileName!= null){
 					System.out.println("file chosen: " + fileName);
