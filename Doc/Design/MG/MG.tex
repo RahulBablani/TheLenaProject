@@ -47,7 +47,7 @@
 \listoftables
 \listoffigures
 
-\begin{table}[bp]
+\begin{table}[htbp]
 \caption{\bf Revision History}
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
@@ -59,9 +59,11 @@ Nov 11, 2016 & 1.2 & Reviewed document for grammar and format\\
 \end{tabularx}
 \end{table}
 
-\newpage
+\clearpage
+
 
 \pagenumbering{arabic}
+
 
 \section{Introduction}
 
@@ -196,24 +198,24 @@ The connection between requirements and modules is listed in Table \ref{TblRT}.
 \subsubsection{M2: File Selection Validation}
 
 \begin{description}
-	\item[Secrets:] 
-	\item[Services:]
+	\item[Secrets:]  Confirms file is chosen to before running application.
+	\item[Services:] Waits for user to select a file before running the application to guarantee the application is processing an image.
 	\item[Implemented By:] TheLenaProject
 \end{description}
 
 \subsubsection{M3: Plugin Selection}
 
 \begin{description}
-	\item[Secrets:]
-	\item[Services:]
+	\item[Secrets:] Determining each plugin corresponds to a button.
+	\item[Services:] Receives user response and the button click corresponds to a plugin which then executes the task listed such as running filters: Invert, Grey Scale, etc. 
 	\item[Implemented By:] TheLenaProject
 \end{description}
 
 \subsubsection{M3: MainGUI Display}
 
 \begin{description}
-	\item[Secrets:]
-	\item[Services:]
+	\item[Secrets:] Interface to interact with the user's selected actions.
+	\item[Services:] Incorporates File Selection Validation in order to display import, output and filtering options to the user in an GUI.
 	\item[Implemented By:] TheLenaProject
 \end{description}
 
@@ -222,14 +224,14 @@ The connection between requirements and modules is listed in Table \ref{TblRT}.
 \subsubsection{M4: Marvin's Plugin Loader}
 
 \begin{description}
-	\item[Secrets:] 
-	\item[Services:] 
+	\item[Secrets:] Allows filters to be applied on images.
+	\item[Services:] Grabs filter from Marvin Framework plugin and applies it to the uploaded image.
 	\item[Implemented By:] TheLenaProject
 \end{description}
 
 \section{Traceability Matrix} \label{SecTM}
 
-The connection between the requirements and the modules is depicted in Table/reftraceback1.
+The connection between the requirements and the modules is depicted in Table 3.
 
 \begin{table}[H]
 \centering
@@ -249,7 +251,7 @@ R5 & M3 \\
 \end{table}
 
 The connection between the anticipated changes and the modules is depicted in
-Table/reftraceback2.
+Table 4.
 
 \begin{table}[H]
 \centering
@@ -257,9 +259,9 @@ Table/reftraceback2.
 \toprule
 \textbf{AC} & \textbf{Modules}\\
 \midrule
-AC1 & \\
-AC2 & \\
-AC3 & \\
+AC1 & M2, M3\\
+AC2 & M3\\
+AC3 & M1, M2, M3, M4\\
 
 \bottomrule
 \end{tabular}
