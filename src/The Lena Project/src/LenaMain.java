@@ -15,8 +15,8 @@ public class LenaMain {
 
 /**
  * @brief checks if a file has been selected
- * @details it checks if the file path is not null
- * 			if not null it will upload the file and open the GUI
+ * @details it checks if the file path is not null.
+ * 			If not null it will upload the file and open the GUI
  * 
  * @param newImport (Checks the file path that newImport has uploaded)
  */
