@@ -88,7 +88,8 @@ implements ActionListener {
 	
 /**
  * @brief loads image
- * @details loads image selected from fileExplorer interface using correct file path
+ * @details loads image selected from fileExplorer interface using correct file path.
+ * 			State Variable: image, after every action image is updated and then re displayed.
  * @param fileName (the full path of the file being uploaded)
  */
 	public void imageLoader(String fileName){
@@ -113,7 +114,8 @@ implements ActionListener {
 	 * @brief reads user input
 	 * @details if a filter is clicked the method will apply the filer to the image
 	 * 			if reset is clicked image will be displayed in its original form
-	 * 			if save is clicked the image will be saved
+	 * 			if save is clicked the image will be saved.
+	 * 			Environmental Variable: saveFile, File path coming from the file explorer
 	 * @param ActionEvent e, This object is used to get the user input
 	 */
 	public void actionPerformed(ActionEvent e){
