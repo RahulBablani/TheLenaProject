@@ -124,7 +124,7 @@ implements ActionListener {
 /**
  * @brief logic behind exporting a file
  * @details collects name, extension, and directory and makes into absolute file path.
- * 			environmental variable file: will take the value of a file path designated by which ever file the user clicks 
+ * 			environmental variable: file, will take the value of a file path designated by which ever file the user clicks 
  */
 	public void saveAction(){
 
