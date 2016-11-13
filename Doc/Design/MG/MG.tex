@@ -12,7 +12,7 @@
     colorlinks,
     citecolor=black,
     filecolor=black,
-    linkcolor=red,
+    linkcolor=black,
     urlcolor=blue
 }
 \usepackage[round]{natbib}
@@ -145,8 +145,8 @@ Due to some of the non-function, requirements specified in the Software Requirem
 \item The application’s user interface will be visually appealing and will operate seamlessly on any operating system providing a very simple and easy way to navigate the application satisfying the look and feel requirements\\
 \item The software will have a simple UI that will allow for any individual no matter their age or familiarity with image processing to be able to use the application. This will satisfy the ease of use, and learning requirements of the project.
 \item Operational and environmental requirements will entail the following requirement that any image size will be accepted as long as the file format is either a PNG or a JPG and will be returned as a PNG or JPG. 
-\item The application should take no longer than PROCESSING TIME to load. The set value of PROCESSING TIME is currently set to 1 second by may change in order to satisfy the performance requirements.
-\item The program will be continuously updated to fix any bugs and add more functionality.This requirement will satisfy the maintainability and support requirements
+\item The application should take no longer than PROCESSING TIME to load. The set value of PROCESSING TIME is currently set to 1 second but may change in order to satisfy the performance requirements.
+\item The program will be continuously updated to fix any bugs and add more functionality. This requirement will satisfy the maintainability and support requirements
 \end{itemize}
 
 The connection between requirements and modules is listed in Table \ref{TblRT}.
@@ -197,7 +197,7 @@ The connection between requirements and modules is listed in Table \ref{TblRT}.
 \subsubsection{M2: File Selection Validation}
 
 \begin{description}
-	\item[Secrets:]  Confirms file is chosen to before running application.
+	\item[Secrets:]  Confirms file is chosen before running application.
 	\item[Services:] Waits for user to select a file before running the application to guarantee the application is processing an image.
 	\item[Implemented By:] TheLenaProject
 \end{description}
