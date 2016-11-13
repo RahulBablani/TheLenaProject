@@ -19,7 +19,14 @@ import java.awt.event.WindowEvent;
 import java.io.File;
 import java.util.Scanner;  
 
-
+/**
+ * @author Nezar
+ * @date 11/10/2016
+ * @brief this class is responsible for the processing of images
+ * @details once an image has been uploaded this class will open a window displaying said image
+ * 			different buttons will be created to allow for different filters
+ * @ add tests for gif
+ */
 
 public class LenaProcessing 
 extends JFrame 
@@ -40,7 +47,10 @@ implements ActionListener {
 
 	private MarvinImagePlugin 	imagePlugin;
 
-	//constructor creates all contents for main GUI
+/**
+ * @brief constructor for the LenaProcessing class
+ * @details creates all contents (buttons and display) for main GUI
+ */
 	public LenaProcessing()
 	{
 		super("LenaProcessing");
@@ -75,15 +85,23 @@ implements ActionListener {
 		mainWindow.add(imagePanel, BorderLayout.NORTH);
 
 	}
-
-	//loads image selected from fileExplorer interface using correct filepath
+	
+/**
+ * @brief loads image
+ * @details loads image selected from fileExplorer interface using correct file path
+ * @param fileName (the full path of the file being uploaded)
+ */
 	public void imageLoader(String fileName){
 		image = MarvinImageIO.loadImage(fileName);
 		backupImage = image.clone();		
 		imagePanel.setImage(image);
 	}
 	
-
+/**
+ * @brief displays GUI
+ * @details once all the panels and buttons are updated this method
+ * 			automatically resizes the window and makes it visible
+ */
 	//creates Main GUI
 	public void createMainGUI(){		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -91,6 +109,13 @@ implements ActionListener {
 		setVisible(true);	
 	}
 
+	/**
+	 * @brief reads user input
+	 * @details if a filter is clicked the method will apply the filer to the image
+	 * 			if reset is clicked image will be displayed in its original form
+	 * 			if save is clicked the image will be saved
+	 * @param ActionEvent e, This object is used to get the user input
+	 */
 	public void actionPerformed(ActionEvent e){
 
 		if(e.getSource() == buttonReset) {
