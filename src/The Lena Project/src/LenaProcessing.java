@@ -119,7 +119,8 @@ implements ActionListener {
 	 * @param ActionEvent e, This object is used to get the user input
 	 */
 	public void actionPerformed(ActionEvent e){
-
+		long start = System.currentTimeMillis(); // start calculating for RESPONSE_TIME
+		
 		if(e.getSource() == buttonReset) {
 			image = backupImage.clone();
 		}
@@ -141,6 +142,9 @@ implements ActionListener {
 
 		image.update();
 		imagePanel.setImage(image);
+		
+		long time = System.currentTimeMillis() - start; // end calculating for RESPONSE_TIME
+		System.out.println("RESPONSE_TIME = " + time + "ms");
 
 
 
