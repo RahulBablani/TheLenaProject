@@ -25,6 +25,8 @@ public class LenaMain {
 		while (check==true){
 
 			fileName = newImport.getOpenFile();
+
+			long start = System.currentTimeMillis(); // start calculating for UPLOAD_TIME
 			System.out.print("");
 
 			if(fileName!= null){
@@ -35,6 +37,8 @@ public class LenaMain {
 				edittingWindow.imageLoader(fileName);
 				edittingWindow.createMainGUI();
 				
+				long time = System.currentTimeMillis() - start; // end calculating for UPLOAD_TIME
+				System.out.println("UPLOAD_TIME = " + time + "ms");
 				check = false;
 
 				newImport.closeFileExplorer();
