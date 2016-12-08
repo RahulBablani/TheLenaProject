@@ -52,10 +52,17 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Nov 7, 2016 & 1.0 & Completed section 1,2,4 \\
-Nov 10, 2016 & 1.1 & Completed section 3,5,6,7 \\
-Nov 11, 2016 & 1.2 & Reviewed document for grammar and format\\
-\bottomrule
+Nov 7, 2016 & 0.0 & Rev0 - Completed section 1,2,4 \\
+Nov 10, 2016 & 0.1 & Rev0 - Completed section 3,5,6,7 \\
+Nov 11, 2016 & 0.2 & Rev0 - Reviewed document for grammar and format\\
+Dec 7, 2016 & 1.0 & Rev1 - 
+\begin{itemize}
+	\item Fixed introduction
+	\item Moved list of modules before table
+	\item Hardware hiding modules
+	\item Fixed Requirements and anticipated changes in Traceability matrix
+\end{itemize}
+
 \end{tabularx}
 \end{table}
 
@@ -68,7 +75,8 @@ Nov 11, 2016 & 1.2 & Reviewed document for grammar and format\\
 \section{Introduction}
 
 This document is dedicated to documenting the module (MG) of
-TheLenaProject. It is intended to represent the systems architectural design, detailed design, and describe the levels of interaction and hierarchy of modules throughout the project. The creation of this project will facilitate developers and testers to create test cases, and find modules that can potentially violate certain design principles.
+TheLenaProject. TheLenaProject allows clients to upload and process normal photos using the open-source project Marvin framework , into elegant images by applying one of the various filters available in our application, much like Instagram does. Once properly implemented, the processed image will then be available to export
+as an image file for use in social media, advertisements, etc. This document It is intended to represent the systems architectural design, detailed design, and describe the levels of interaction and hierarchy of modules throughout the project. The creation of this project will facilitate developers and testers to create test cases, and find modules that can potentially violate certain design principles. The rules and principles have decided to follow will be outlined throughout this document.
 
 \section{Anticipated and Unlikely Changes} \label{SecChange}
 
@@ -103,7 +111,14 @@ inconsistent implementation, and will no longer be following TheLenaProject stan
 \section{Module Hierarchy} \label{SecMH}
 
  The different design modules of TheLenaProject will be defined in this section. The modules listed below will be implemented into TheLenaProject.
-
+ 
+\begin{itemize}
+	\item M1: File Explorer Module
+	\item M2: Control Module
+	\item M3: Lena Processing Module
+	\item M4: Marvin Framework Module
+	
+\end{itemize}
 
 \begin{table}[h!]
 \centering
@@ -113,16 +128,15 @@ inconsistent implementation, and will no longer be following TheLenaProject stan
 \midrule
 
 
-{Hardware-Hiding Module} & N/A \\
+{Hardware-Hiding Module} & Marvin Framework Module \\
 \midrule
 \multirow{7}{0.3\textwidth}
 & File Explorer Module\\
-{Behaviour-Hiding Module} & Control Module\\
-& Lena Processing Module\\
+{Behaviour-Hiding Module} & Lena Processing Module\\
 \midrule
 
 
-{Software Decision Module} & Marvin Framework Module\\
+{Software Decision Module} & Control Module\\
 \midrule
 
 \end{tabular}
@@ -130,13 +144,7 @@ inconsistent implementation, and will no longer be following TheLenaProject stan
 \label{TblMH}
 \end{table}
 
-\begin{itemize}
-	\item M1: File Explorer Module
-	\item M2: Control Module
-	\item M3: Lena Processing Module
-	\item M4: Marvin Framework Module
-	
-\end{itemize}
+
 
 \section{Connection Between Requirements and Design} \label{SecConnection}
 
@@ -153,14 +161,20 @@ The connection between requirements and modules is listed in Table \ref{TblRT}.
 
 \section{Module Decomposition} 
 
+This section breaks down our application into hardware hiding, behaviour-hiding and software decisions that are implemented in our project.
+
 \subsection{Hardware Hiding Modules}
+This section breaks down our application into hardware hiding modules
+\subsubsection{M4: Marvin's Plugin Loader}
 
 \begin{description}
-\item N/A
+	\item[Secrets:] Allows filters to be applied on images.
+	\item[Services:] Grabs filter from Marvin Framework plugin and applies it to the uploaded image.
+	\item[Implemented By:] TheLenaProject
 \end{description}
 
 \subsection{Behaviour-Hiding Module}
-
+This section breaks down our application into behaviour-hiding modules
 \subsubsection{M1: File Import}
 
 \begin{description}
@@ -194,14 +208,6 @@ The connection between requirements and modules is listed in Table \ref{TblRT}.
 	
 \end{description}
 
-\subsubsection{M2: File Selection Validation}
-
-\begin{description}
-	\item[Secrets:]  Confirms file is chosen before running application.
-	\item[Services:] Waits for user to select a file before running the application to guarantee the application is processing an image.
-	\item[Implemented By:] TheLenaProject
-\end{description}
-
 \subsubsection{M3: Plugin Selection}
 
 \begin{description}
@@ -219,12 +225,13 @@ The connection between requirements and modules is listed in Table \ref{TblRT}.
 \end{description}
 
 \subsection{Software Decision Module}
+This section breaks down our application into software decision modules
 
-\subsubsection{M4: Marvin's Plugin Loader}
+\subsubsection{M2: File Selection Validation}
 
 \begin{description}
-	\item[Secrets:] Allows filters to be applied on images.
-	\item[Services:] Grabs filter from Marvin Framework plugin and applies it to the uploaded image.
+	\item[Secrets:]  Confirms file is chosen before running application.
+	\item[Services:] Waits for user to select a file before running the application to guarantee the application is processing an image.
 	\item[Implemented By:] TheLenaProject
 \end{description}
 
@@ -240,8 +247,8 @@ The connection between the requirements and the modules is depicted in Table 3.
 \midrule
 R1 & M1, M2 \\
 R2 & M3, M4 \\
-R3 & M1, M2, M3, M4 \\
-R4 & M1, M3, M4 \\
+R3 & M2, M3, M4 \\
+R4 & M1, M3 \\
 R5 & M3 \\
 \bottomrule
 \end{tabular}
@@ -258,7 +265,7 @@ Table 4.
 \toprule
 \textbf{AC} & \textbf{Modules}\\
 \midrule
-AC1 & M2, M3\\
+AC1 & M1, M2, M3\\
 AC2 & M3\\
 AC3 & M1, M2, M3, M4\\
 
@@ -270,16 +277,14 @@ AC3 & M1, M2, M3, M4\\
 
 \section{Use Hierarchy Between Modules} \label{SecUse}
 
-
+This section breaks down our application into a uses hierarchy between corresponding modules 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{Uses.png}
+\includegraphics[width=0.7\textwidth]{Uses1.png}
 \caption{Use hierarchy among modules}
 \label{FigUH}
 \end{figure}
-
-%\section*{References}
 
 \bibliographystyle {plainnat}
 \bibliography {MG}
