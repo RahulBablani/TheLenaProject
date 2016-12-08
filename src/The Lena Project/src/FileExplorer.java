@@ -116,6 +116,8 @@ implements ActionListener {
 		if (fileName.contains(".")){
 
 			extension = fileName.substring(fileName.lastIndexOf(".") + 1);
+			extension = extension.toLowerCase();
+
 			System.out.println("~~~extension: " + extension);
 
 			if (extension.equals("png") || extension.equals("gif") 
