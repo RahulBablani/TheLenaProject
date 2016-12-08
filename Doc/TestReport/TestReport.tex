@@ -379,7 +379,7 @@ Solution: It is inevitable that users will make mistakes or will want to change 
 Solution: Originally opening file was only an option when the application first opened. An open button was added so users can choose a different image even with the GUI already opened.\\
 
 \section{Automated Testing}
-Most of our project is based on buttons, clicks, and action listeners. This model leaves little room for automated testing as most test cases are run manually. However file import and export is a very crucial part of the testing and with many different possibilities of file formats it became necessary to include automated testing. JUnit was implemented to automatically test the file open and file save modules. Different file types were input into the modules to analyze whether the output was the correct result. When supported file formats were put in the system acted as it should and the result was correct. When unsupported or unusual formats were input the system crashed.
+Most of our project is based on buttons, clicks, and action listeners. This model leaves little room for automated testing as most test cases are run manually. However file import and export is a very crucial part of the testing and with many different possibilities of file formats it became necessary to include automated testing. JUnit was implemented to automatically test the file open and file save modules. Different file types were inputted into the modules to analyze whether the output was the correct result. When supported file formats were put in, the system acted as it should and the result was correct. When unsupported or unusual formats were inputted into the system crashed.
 \section{Trace to Requirements}
 \begin{table}[h]
 \scriptsize
@@ -712,7 +712,7 @@ Most of our project is based on buttons, clicks, and action listeners. This mode
 	\end{table}
 	
 \section{Code Coverage Metrics}
-We used JCov to measure and analyze dynamic code coverage of our app. When the app runs the code coverage data is collected. Unlike static code coverage JCov is able to collect the data while the program is being executed. We collected method, linear block, and branch coverage. JCov also shows our programs source code annotated with coverage information. In Addition each function had test cases specifically made to cover all aspects of the code within the method. For example the file explorer test cases were designed such that all the if statements were executed (statement coverage).
+We used JCov to measure and analyze dynamic code coverage of our app. When the app runs the code coverage data is collected. Unlike static code coverage JCov is able to collect the data while the program is being executed. We collected method, linear block, and branch coverage. JCov also shows our programs source code annotated with coverage information. In addition each function had test cases specifically made to cover all aspects of the code within the method. For example the FileExplorer test cases were designed such that all the if statements were executed (statement coverage).
 \bibliographystyle{plainnat}
 \bibliography{SRS}
 \end{document}
