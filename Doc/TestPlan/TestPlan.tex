@@ -3,6 +3,7 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{hyperref}
+\usepackage{indentfirst}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -30,23 +31,37 @@
 \tableofcontents
 \listoftables
 
+\newpage
+
 \begin{table}[bp]
 \caption{\bf Revision History}
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-October 21 2016 & 1.0 & Completed Revision 0: General Information and Unit Testing Plan\\
-October 24 2016 & 1.1 & Completed Revision 0: Plan, System Test Description and Appendix\\
-October 27 2016 & 1.2 & Completed Revision 0: Comparison to Existing Implementation and Tests for Proof of Concept\\
-\bottomrule
+October 21 2016 & 0.0 & Rev0 - Completed Revision 0: General Information and Unit Testing Plan\\
+October 24 2016 & 0.1 & Rev0 - Completed Revision 0: Plan, System Test Description and Appendix\\
+October 27 2016 & 0.2 & Rev0 - Completed Revision 0: Comparison to Existing Implementation and Tests for Proof of Concept\\
+December 7 2016 & 1.0 & Rev1 - 
+\begin{itemize}
+	\item Fixed grammar
+	\item Added abbreviations to table
+	\item Code coverage
+	\item Tests that throw exceptions
+\end{itemize}
+
+
 \end{tabularx}
 \end{table}
 
-\newpage
+
+\clearpage
 
 \pagenumbering{arabic}
 
+
 \section{General Information}
+
+This section provides general information for TheLenaProject.
 
 \subsection{Purpose}
 
@@ -65,9 +80,14 @@ This Test Plan is focused on describing how each test case should be constructed
 \toprule
 \textbf{Abbreviation} & \textbf{Definition} \\
 \midrule
-JPEG: & Joint Photographic Experts Group\\
+JPEG/JPG: & Joint Photographic Experts Group (Older version of JPG)\\
+JAR: & Java Archive \\
+GUI: & Graphical User Interface\\
 PNG:  & Portable Network Graphics\\
 EULA: & End User License Agreement\\
+SVG: & Scalable Vector Graphics\\
+BMP: & Bitmap Image File\\
+TIF: & Tagged Image Format File \\
 \bottomrule
 \end{tabularx}
 
@@ -96,6 +116,8 @@ Image \\ Processing: & The analysis and manipulation of a digitized image, espec
 This test plan document for TheLenaProject revision 0, will primarily be responsible for addressing the testing planning of the various functions implemented within our project.
 
 \section{Plan}
+
+This section outlines the plan for TheLenaProject
 	
 \subsection{Software Description}
 
@@ -121,6 +143,9 @@ Automated testing will be conducted using JUnit and will be used to test major f
 \item J-Unit will be implemented as the primary testing framework to run tests on all sections of the code.
 \item Different images and file types will be used to test the file input and output of the application.
 \item Black box testing will be done on Windows, Mac, and Linux based operating systems to ensure all functional and non-functional requirements are fulfilled on all platforms.
+\item To report and measure Java code coverage we will use the tool JCov. JCov is capable of reporting the following types of code coverage: Block coverage, Line coverage, Branch coverage, Method coverage.
+\item For manual testing, we will be using Surveys for the focus
+groups and word processing for keeping track of test cases.
 \end{itemize}
 
 \subsection{Testing Schedule}
@@ -129,6 +154,8 @@ See Gantt Chart by clicking the following hyperlink:
 \href{https://gitlab.cas.mcmaster.ca/dimitn/image_processing_app/tree/master/ProjectSchedule}{Gantt Chart}
 
 \section{System Test Description}
+
+This section provides information about system tests within our project.
 	
 \subsection{Tests for Functional Requirements}
 
@@ -154,18 +181,54 @@ Initial State: No picture is uploaded or displayed \\ \\
 Input: Upload an image with file extensions (JPG, PNG, JPEG) \\ \\
 Output: Picture will successfully be uploaded and displayed. \\ \\
 How the test will be performed: when prompted a file extension will be input, next the file path and then a file location. The GUI will open and the image will be displayed
+
+\item{Upload}
+Type: Functional Dynamic \\ \\
+Initial State: No picture is uploaded or displayed \\ \\
+Input: Upload an image with file extensions (SVG) \\ \\
+Output: Nothing happens, no picture or GUI opened. \\ \\
+How the test will be performed: when prompted a file extension will be input, next the file path and then a file location. The GUI will open and the image will be displayed
+
+\item{Upload}
+Type: Functional Dynamic \\ \\
+Initial State: No picture is uploaded or displayed \\ \\
+Input: Upload an image with file extensions (Word file - .DOC) \\ \\
+Output: Nothing happens, no picture or GUI opened. \\ \\
+How the test will be performed: when prompted a file extension will be input, next the file path and then a file location. The GUI will open and the image will be displayed
+
+\item{Upload}
+Type: Functional Dynamic \\ \\
+Initial State: No picture is uploaded or displayed \\ \\
+Input: Upload an image with file extensions (Corrupted PNG) \\ \\
+Output: Nothing happens, no picture or GUI opened.\\ \\
+How the test will be performed: when prompted a file extension will be input, next the file path and then a file location. The GUI will open and the image will be displayed
+
 \item{Save}
 Type: Functional Dynamic \\ \\
 Initial State: Picture is displayed in app and a filter has been applied \\ \\
-Input: Save and image \\ \\
+Input: Save a .PNG image \\ \\
 Output: Image will be saved in desired location \\ \\
+How the test will be performed: A picture will be uploaded then filtered. The save button will be clicked. The following prompts will be filled in with the desired file extension, file path and file name.
+
+\item{Save}
+Type: Functional Dynamic \\ \\
+Initial State: Picture is displayed in app and a filter has been applied \\ \\
+Input: Save a .SVG image \\ \\
+Output: Nothing will be saved \\ \\
+How the test will be performed: A picture will be uploaded then filtered. The save button will be clicked. The following prompts will be filled in with the desired file extension, file path and file name.
+
+\item{Save}
+Type: Functional Dynamic \\ \\
+Initial State: Picture is displayed in app and a filter has been applied \\ \\
+Input: Save an image with no extension \\ \\
+Output: Throws exception error: "Invalid file  format please try again!" \\ \\
 How the test will be performed: A picture will be uploaded then filtered. The save button will be clicked. The following prompts will be filled in with the desired file extension, file path and file name.
 
 \item{Resize}
 Type: Functional Dynamic \\ \\
 Initial State: Image processing app is open \\ \\
-Input: The Minimize “-“, maximize “□” and close buttons “x” are pressed \\ \\
-Output: the app will Minimize, Maximize then close \\ \\
+Input: The Minimize ''-'', maximize ''O'' and close buttons ''x'' are pressed \\ \\
+Output: the app will Minimize and Maximize then close \\ \\
 How the test will be performed: The app will be opened. While open the three mentioned buttons will be clicked.
 
 \item{Manual Resize}
@@ -254,6 +317,8 @@ How the test will be performed: Users will be asked to spend ten minutes using o
 
 \section{Tests for Proof of Concept}
 
+This section provides tests for proof of concept within our project
+
 \subsection{Tests for Functional Requirements}
 		
 
@@ -313,6 +378,8 @@ How the test will be performed: A function will be written to count the number o
 \section{Comparison to Existing Implementation}	
 			Compared to the existing implementation of the open source image processing project Marvin Frameworks we have added 3 major features that distinguish us from them. We have added a fairly simple but elegant interface that allows the user to import and export image files. The GUI is very simple to allow any regular computer user to easily navigate the application and successfully upload, customize and export their image.  Our application has also been customized to allow a single image to be processed more than once with multiple filters to allow such features as: grayscale, invert and edge detection all at once on one single image as well as being able to process a single filter multiple times to intensify the effect of the filter. We have finally implemented an exporting tool to save the image as a .png or .jpg file which the original Marvin Frameworks project did not include. Next steps will be to implement error handling methodologies and look into the addition of video processing which may be out of the scope for the time restriction we are limited too but may be a future implementation of our application.
 \section{Unit Testing Plan}
+
+This section provides information about the unit testing plan within our project.
 		
 \subsection{Unit testing of internal functions}
 
@@ -325,9 +392,6 @@ There are 3 types of buttons associated to the GUI: filter buttons, a reset butt
 
 The only output file generated in this project is the processed version of the image that the user desires to save to their local drive. This is possible through the save button, which subsequently prompts the user with the export interface where they can select the image type, destination folder, and name of the finished product. The first unit test for the save button was discussed in the previous subsection (6.1 Unit testing of internal functions), but as stated there, there is a second unit test which is linked to the output files. This will be testing the reliability, compatibility, as well as the actual correctness of the output file. The unit test will pass if, after the prompting for export, the image is save with the correct formatting, with the right file path, and that the image is identical to how it looked in the preview window (with selected filters applied to it). This must consistently, work as well have some error handling to be able to notify the user if the selected format, file path, chosen name are invalid.	
 
-\bibliographystyle{plainnat}
-
-\bibliography{SRS}
 
 \newpage
 
@@ -354,6 +418,10 @@ We plan to hold a small beta test, targeting a wide variety of age groups and co
 	\item Does the application open on your computer? If so, how long does it take?
 	\item Are you able to successfully upload and save your file?
 	\item Are you able to successfully apply filter(s)?
+	\item On a scale from 1-10 how appealing was the look of the app?
+	\item How many clicks were needed to: open, filter and save an image
+	\item How easy on a scale from 1-10 was the application to use?
+	\item Any feedback on how to improve our application?
 \end{itemize}
 
 \end{document}
