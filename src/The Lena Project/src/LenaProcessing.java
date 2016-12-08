@@ -47,10 +47,10 @@ implements ActionListener {
 
 	private MarvinImagePlugin 	imagePlugin;
 
-/**
- * @brief constructor for the LenaProcessing class
- * @details creates all contents (buttons and display) for main GUI
- */
+	/**
+	 * @brief constructor for the LenaProcessing class
+	 * @details creates all contents (buttons and display) for main GUI
+	 */
 	public LenaProcessing()
 	{
 		super("LenaProcessing");
@@ -85,24 +85,24 @@ implements ActionListener {
 		mainWindow.add(imagePanel, BorderLayout.NORTH);
 
 	}
-	
-/**
- * @brief loads image
- * @details loads image selected from fileExplorer interface using correct file path.
- * 			State Variable: image, after every action image is updated and then re displayed.
- * @param fileName (the full path of the file being uploaded)
- */
+
+	/**
+	 * @brief loads image
+	 * @details loads image selected from fileExplorer interface using correct file path.
+	 * 			State Variable: image, after every action image is updated and then re displayed.
+	 * @param fileName (the full path of the file being uploaded)
+	 */
 	public void imageLoader(String fileName){
 		image = MarvinImageIO.loadImage(fileName);
 		backupImage = image.clone();		
 		imagePanel.setImage(image);
 	}
-	
-/**
- * @brief displays GUI
- * @details once all the panels and buttons are updated this method
- * 			automatically resizes the window and makes it visible
- */
+
+	/**
+	 * @brief displays GUI
+	 * @details once all the panels and buttons are updated this method
+	 * 			automatically resizes the window and makes it visible
+	 */
 	//creates Main GUI
 	public void createMainGUI(){		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -120,7 +120,7 @@ implements ActionListener {
 	 */
 	public void actionPerformed(ActionEvent e){
 		long start = System.currentTimeMillis(); // start calculating for RESPONSE_TIME
-		
+
 		if(e.getSource() == buttonReset) {
 			image = backupImage.clone();
 		}
@@ -142,7 +142,7 @@ implements ActionListener {
 
 		image.update();
 		imagePanel.setImage(image);
-		
+
 		long time = System.currentTimeMillis() - start; // end calculating for RESPONSE_TIME
 		System.out.println("RESPONSE_TIME = " + time + "ms");
 
