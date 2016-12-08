@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{hyperref}
+\usepackage{indentfirst}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -75,8 +76,8 @@ Dec 7, 2016 & 1.0 & Rev1 -
 \section{Introduction}
 
 This document is dedicated to documenting the module (MG) of
-TheLenaProject. TheLenaProject allows clients to upload and process normal photos using the open-source project Marvin framework , into elegant images by applying one of the various filters available in our application, much like Instagram does. Once properly implemented, the processed image will then be available to export
-as an image file for use in social media, advertisements, etc. This document It is intended to represent the systems architectural design, detailed design, and describe the levels of interaction and hierarchy of modules throughout the project. The creation of this project will facilitate developers and testers to create test cases, and find modules that can potentially violate certain design principles. The rules and principles have decided to follow will be outlined throughout this document.
+TheLenaProject. TheLenaProject allows clients to upload and process normal photos using the open-source project Marvin framework, into elegant images by applying one of the various filters available in our application, much like Instagram does. Once properly implemented, the processed image will then be available to export
+as an image file for use in social media, advertisements, etc. This document It is intended to represent the systems architectural design, detailed design, and describe the levels of interaction and hierarchy of modules throughout the project. The creation of this project will facilitate developers and testers to create test cases, and find modules that can potentially violate certain design principles. The rules and principles we have decided to follow will be outlined throughout this document.
 
 \section{Anticipated and Unlikely Changes} \label{SecChange}
 
@@ -275,6 +276,8 @@ AC3 & M1, M2, M3, M4\\
 \label{TblACT}
 \end{table}
 
+\newpage
+
 \section{Use Hierarchy Between Modules} \label{SecUse}
 
 This section breaks down our application into a uses hierarchy between corresponding modules 
@@ -285,8 +288,5 @@ This section breaks down our application into a uses hierarchy between correspon
 \caption{Use hierarchy among modules}
 \label{FigUH}
 \end{figure}
-
-\bibliographystyle {plainnat}
-\bibliography {MG}
 
 \end{document}
