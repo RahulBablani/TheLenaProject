@@ -5,6 +5,10 @@
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{tabu}
+\usepackage{color}
+\usepackage{indentfirst}
+\usepackage{multirow}
+
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -24,7 +28,6 @@
 
 \date{\today}
 
-\input{../Comments}
 
 \begin{document}
 
@@ -35,18 +38,27 @@
 \listoftables
 \listoffigures
 
-\begin{table}[bp]
+\begin{table}[htbp]
 \caption{\bf Revision History}
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Oct 6, 2016 & 1.0 & Split up parts and started documentation.\\
-Oct 11, 2016 & 1.1 & Finished separate parts and compiled document.\\
-\bottomrule
+Oct 6, 2016 & 0 & Rev0 - Split up parts and started documentation.\\
+Oct 11, 2016 & 0.1 & Rev0 - Finished separate parts and compiled document.\\
+Dec 7, 2016 & 1 & Rev1 - 
+\begin{itemize}
+	\item Added professor to stakeholders
+	\item No headings with no text between them?
+	\item "Context of the Work" explained
+	\item Eye strain added to safety
+	\item Added upcoming features to waiting room
+\end{itemize}
+
+
 \end{tabularx}
 \end{table}
 
-\newpage
+\clearpage
 
 \pagenumbering{arabic}
 
@@ -58,7 +70,7 @@ The purpose of this project, is to re-implement the open source image processing
 
 \subsection{The Stakeholders}
 
-Stakeholders will include: social media users (Instagram, Snapchat), photo/video editors, Team 1 (us).
+Stakeholders include: social media users (Instagram, Snapchat), photo/video editors, Team NAR (us), Spencer Smith (Professor) and future developers who may take over the project if it requires more man-power.
 
 \subsubsection{The Client}
 
@@ -153,15 +165,21 @@ refer to \textit{Figure 1}
 	\includegraphics[width=\linewidth]{context.jpg}
 	\caption{Context of the Work}
 	\end{figure}
+	
+Explanation: \\
 
-\newpage
+\begin{itemize}
+	\item The external entity is the user who initially selects the image they would like to process. The image then goes through the external image processing interface which calls the Marvin framework to apply the users inputted desired filter. The interface then displays a preview of the image and this cycle continues until the user exports the file into a raster image file they see suitable.
+\end{itemize}
+
+\clearpage
 
 \subsubsection{Work Partitioning}
 refer to \textit{Table 2}
 
 \begin{table}[bp]
 \caption{\bf Work Partitioning}
-\begin{tabu} to 1.1\textwidth { | X[l] | X[1.5] | X[1.5] | }
+\begin{tabu} to 1.1\textwidth { | X[l] | X[1] | X[1] | }
 
 \hline
 	      		Event & Input/Output & Summary \\
@@ -195,7 +213,7 @@ refer to \textit{Figure 2}
 . . .
 
 \begin{figure}[h]
-	\includegraphics[width=\linewidth]{usesCase.jpg}
+	\includegraphics[width=\linewidth]{uses.png}
 	\caption{Uses Case Diagram}
 	\end{figure}
 
@@ -337,8 +355,10 @@ Technological Environment
 \end{itemize}
 
 \subsection{Health and Safety Requirements}
+\begin{itemize}
+	\item A possible health and safety requirement issue could involve eye strains from using the application for too long, if this occurs take a minimum 15 minute break from using digital screens but if symptoms still persist contact your doctor.
+\end{itemize}
 
-N/A
 
 \newpage
 
@@ -382,13 +402,15 @@ There are no costs associated with the development of the project because we are
 
 \subsection{User Documentation and Training}
 
-For our project we plan to optimize the usability and implement a UI that is as straight forward as possible allowing any age group to be able to use our application.
+For our project we plan to optimize the usability and implement a UI that is as straight forward as possible allowing any age group to be able to use our application. For running our executable JAR file we have added a readme file to explain the steps to process your first image.
 
 \subsection{Waiting Room}
 
 \begin{itemize}	
-\item Future releases my include buttons in different languages\\
-\item Our application could possibly implement video filter  processing\\
+\item Future releases my include buttons in different languages
+\item Our application could possibly implement video filter processing
+\item In the near future we plan to add the ability to use your webcam in combination with the application
+\item We plan to implement a web interface similar to Instagram
 \end{itemize}
 
 \subsection{Ideas for Solutions}
