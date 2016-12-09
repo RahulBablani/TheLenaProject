@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -14,10 +13,6 @@ import marvin.image.MarvinImageMask;
 import marvin.io.MarvinImageIO;
 import marvin.plugin.MarvinImagePlugin;
 import marvin.util.MarvinPluginLoader;
-
-import java.awt.event.WindowEvent;
-import java.io.File;
-import java.util.Scanner;  
 
 /**
  * @author Nezar

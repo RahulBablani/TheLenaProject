@@ -9,8 +9,8 @@
     colorlinks,
     citecolor=black,
     filecolor=black,
-    linkcolor=red,
-    urlcolor=blue
+    linkcolor=black,
+    urlcolor=black
 }
 \usepackage[round]{natbib}
 \title{SE 3XA3: Test Report\\The Lena Project}
@@ -32,6 +32,7 @@
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
 Dec 7, 2016 & 1.0 & Completed Initial Report\\
+Dec 8, 2016 & 1.1 & Proof read with some minor changes\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -118,7 +119,7 @@ Response: Average of 8/10
 
 \subsection{Usability}
 \noindent Survey Question: How many clicks were needed to: open, filter and save an image\\
-Response: An average of 11 clicks\\
+Response: An average of 8 clicks\\
 Survey Question: How easy on a scale from 1-10 was the application to use?\\
 Response: rating of 10\\
 
@@ -286,7 +287,7 @@ This section is broken down into related subsections.
 	\end{table}
 
 \subsection{Robustness}
-The Lena Processing application only supports non corrupted Raster file formats. This includes processes of opening and saving an image. To test Robustness We tried to open a file of a type that is accepted, not accepted, and corrupted. We then tried to save the image by renaming the extension of a type that is accepted, not accepted, and the boundary case of no extension.
+The Lena Processing application only supports uncorrupted Raster image file formats. This includes processes of opening and saving an image. To test robustness we attempted openning file types that were accepted, not accepted, and corrupted. We then tried to save the image by renaming the extension of a type that is accepted, not accepted, and the boundary case of no extension.
 
 \begin{table}[!hb]
 \scriptsize
@@ -333,12 +334,12 @@ The Lena Processing application only supports non corrupted Raster file formats.
 \#17
 & .SVG
 & Warning of wrong file extension will appear
-& FAIL Nothing is saved\\
+& FAIL Nothing is saved \\
 \hline
 \#18
 & No extension
 & Save as default extension
-& FAIL Nothing is saved\\
+& FAIL Nothing is saved \\
 \hline
 	\end{tabu}
 	\end{table}
@@ -350,7 +351,7 @@ This section does not apply to our project.
 \section{Unit Testing}
 Our unit testing plan broke down into the testing of internal functions and testing of output files.
 \subsection{Internal Functions}
-The main internal Function is our project is the actionPerformed module which is used to listen to the actions in the GUI. A series of if-statements connect each button to the correct plugins subsequently applying the correct filter or correct action. Each button was tested based on its functionality. All the filter buttons correctly modified the photo to apply their designated filter. The reset button was successful in restoring the image to its original state. Lastly the save button does its job in opening the file explorer to allow for users to choose their desired file destination.
+The main internal function of our project is the actionPerformed module which is used to listen to the actions in the GUI. A series of if-statements connect each button to the correct plugins subsequently applying the correct filter or correct action. Each button was tested based on its functionality. All the filter buttons correctly modified the photo to apply their designated filter. The reset button was successful in restoring the image to its original state. Lastly the save button does its job in opening the file explorer to allow for users to choose their desired file destination.
 \subsection{Output Files}
 The output file is the processed version of the user’s original image that they would like to save onto their local drive. The save button mentioned in the section above opens the file explorer which prompts the user to select a file type, a destination folder, and a name for the image which they wish to save. The testing of this included trying to save images with different file formats. The tests passed when the user tried to save the image with a correct file extension. The tests however failed when an incorrect or unsupported file format was chosen. We have implemented new safety measures to correct the failure in these test. These implementations are explained in the ‘’Changes Due to Testing’’ section. 
 
@@ -364,7 +365,7 @@ This section is broken down into opening and saving.
 Our initial thought to solving the issue of opening wrong file formats was to just issue a warning prompt. We instead implemented a check in the file explorer so users are only able to choose an image that has a file format our app accepts.
 
 \subsubsection{Saving}
-The way we implemented safety towards file saving was very similar to the way we implemented it for opening a file. The issue was that file saving was very dependent on user input as the file name comes from a string. The first step was to allow any file extension that was of a type our app supported. If there was no file extension given, the image would be saved to a PNG by default. If the file extension was not supported or there was an issue in the way the user input the file name an error prompt appeared and the user was forced to rename the project.
+The way we implemented safety towards file saving was very similar to the way we implemented it for opening a file. The issue was that file saving was very dependent on user input as the file name comes from a string. The first step was to allow any file extension that was of a type our app supported. If there was no file extension given, the image would be saved with the same file extension as the imported image. If the file extension was not supported or there was an issue in the way the user input the file name an error prompt appeared and the user was forced to rename the project.
 
 \subsection{Additions}
 The survey we implemented asked users to give us feedback based on any problems they faced or any features they would like to see added. This section of the survey deemed to be much more useful than originally expected and led to many changes to out app.\\
@@ -379,7 +380,7 @@ Solution: It is inevitable that users will make mistakes or will want to change 
 Solution: Originally opening file was only an option when the application first opened. An open button was added so users can choose a different image even with the GUI already opened.\\
 
 \section{Automated Testing}
-Most of our project is based on buttons, clicks, and action listeners. This model leaves little room for automated testing as most test cases are run manually. However file import and export is a very crucial part of the testing and with many different possibilities of file formats it became necessary to include automated testing. JUnit was implemented to automatically test the file open and file save modules. Different file types were input into the modules to analyze whether the output was the correct result. When supported file formats were put in the system acted as it should and the result was correct. When unsupported or unusual formats were input the system crashed.
+Most of our project is based on buttons, clicks, and action listeners. This model leaves little room for automated testing as most test cases are run manually. However file import and export is a very crucial part of the testing and with many different possibilities of file formats it became necessary to include automated testing. JUnit was implemented to automatically test the file open and file save modules. Different file types were inputted into the modules to analyze whether the output was the correct result. When supported file formats were put in, the system acted as it should and the result was correct. When unsupported or unusual formats were inputted into the system crashed.
 \section{Trace to Requirements}
 \begin{table}[h]
 \scriptsize
@@ -712,7 +713,7 @@ Most of our project is based on buttons, clicks, and action listeners. This mode
 	\end{table}
 	
 \section{Code Coverage Metrics}
-We used JCov to measure and analyze dynamic code coverage of our app. When the app runs the code coverage data is collected. Unlike static code coverage JCov is able to collect the data while the program is being executed. We collected method, linear block, and branch coverage. JCov also shows our programs source code annotated with coverage information. In Addition each function had test cases specifically made to cover all aspects of the code within the method. For example the file explorer test cases were designed such that all the if statements were executed (statement coverage).
+We used JCov to measure and analyze dynamic code coverage of our app. When the app runs the code coverage data is collected. Unlike static code coverage JCov is able to collect the data while the program is being executed. We collected method, linear block, and branch coverage. JCov also shows our programs source code annotated with coverage information. In addition each function had test cases specifically made to cover all aspects of the code within the method. For example the FileExplorer test cases were designed such that all the if statements were executed (statement coverage).
 \bibliographystyle{plainnat}
 \bibliography{SRS}
 \end{document}
